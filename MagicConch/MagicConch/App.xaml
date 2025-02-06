@@ -1,0 +1,28 @@
+﻿<Application
+    x:Class="MagicConch.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MagicConch">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MagicConch.Support;component/Themes/Generic.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+            
+            <FontFamily x:Key="BASKVILL">/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face</FontFamily>
+
+            <Style TargetType="TransitioningContentControl">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            </Style>
+            <Style TargetType="ContentControl">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+    <Application.Theme>
+        <mt:ModernTheme xmlns:mt="http://opensilver.net/themes/modern" CurrentPalette="Light" />
+    </Application.Theme>
+</Application>

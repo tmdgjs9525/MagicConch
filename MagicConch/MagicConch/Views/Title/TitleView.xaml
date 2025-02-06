@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="MagicConch.Views.Title.TitleView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MagicConch.Views.Title"
+    xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support"
+    Background="Blue">
+    <Border Background="Blue">
+        <Grid x:Name="grid" Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="330" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <local:Header Grid.Row="0" />
+
+            <support:SequentialRevealTextBlock
+                x:Name="test"
+                Grid.Row="1"
+                Margin="0,50,0,0"
+                VerticalAlignment="Top"
+                FontFamily="{StaticResource BASKVILL}"
+                FontSize="250"
+                FontWeight="Bold"
+                Text="MAGIC CONCH"
+                Offset="325"
+                Duration="0:0:0.7" />
+
+            <Border Grid.Row="2" Background="Blue"/>
+        </Grid>
+    </Border>
+</UserControl>
