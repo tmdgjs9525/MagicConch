@@ -31,7 +31,7 @@
                 FontFamily="{StaticResource BASKVILL}"
                 FontSize="250"
                 FontWeight="Bold"
-                Text="WATSON"
+                Text="MAGIC CONCH"
                 Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight,Converter={StaticResource AddValueConverter},ConverterParameter=300}"
                 Duration="0:0:2" />
 

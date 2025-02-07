@@ -138,35 +138,13 @@ namespace MagicConch.Support.Themes.Units
                 EasingFunction = new CircleEase { EasingMode = EasingMode.EaseInOut}
             };
 
-            var endAnimation = new DoubleAnimation
-            {
-                To = 0,
-                Duration = TimeSpan.FromMilliseconds(1000),
-                BeginTime = TimeSpan.FromMilliseconds(0),
-                EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
-            };
-
             Storyboard.SetTarget(transformAnimation, transform);
             Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("Y"));
-            Storyboard.SetTarget(endAnimation, transform);
-            Storyboard.SetTargetProperty(endAnimation, new PropertyPath("Y"));
 
             var storyboard = new Storyboard();
             storyboard.Children.Add(transformAnimation);
 
-            var endStoryboard = new Storyboard();
-            endStoryboard.Children.Add(endAnimation);
-
-            storyboard.Completed += (s, e) =>
-            {
-                //endStoryboard.Begin();
-            };
-
             storyboard.Begin();
-
-            
-
-            
         }
     }
 }
