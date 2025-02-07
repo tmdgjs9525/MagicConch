@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
+    <Compile Include="Converters\AddValueConverter.cs" />
     <Compile Include="Regions\ViewNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -58,10 +59,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\MagicConch.Core\MagicConch.Core.csproj" />
     <ProjectReference Include="..\..\MagicConch.Support\MagicConch.Support.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Converters\" />
   </ItemGroup>
 
 </Project>

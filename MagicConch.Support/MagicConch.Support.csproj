@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Include="Converters\NegativeValueConverter.cs" />
+    <Compile Include="EaseFunctions\FastThenSlowEase.cs" />
     <Compile Include="Enums\Direction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Themes\Units\SequentialRevealTextBlock.cs" />

@@ -1,4 +1,5 @@
-﻿using MagicConch.Support.Enums;
+﻿using MagicConch.Support.EaseFunctions;
+using MagicConch.Support.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -125,21 +126,47 @@ namespace MagicConch.Support.Themes.Units
         {
             var transform = new TranslateTransform { Y = Offset };
             element.RenderTransform = transform;
+
+            double to = ActualHeight * 0.1;
+
             var transformAnimation = new DoubleAnimation
             {
                 From = Offset,
                 To = 0,
                 Duration = this.Duration,
                 BeginTime = TimeSpan.FromMilliseconds(0),
-                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+                EasingFunction = new CircleEase { EasingMode = EasingMode.EaseInOut}
+            };
+
+            var endAnimation = new DoubleAnimation
+            {
+                To = 0,
+                Duration = TimeSpan.FromMilliseconds(1000),
+                BeginTime = TimeSpan.FromMilliseconds(0),
+                EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
             };
 
             Storyboard.SetTarget(transformAnimation, transform);
             Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("Y"));
+            Storyboard.SetTarget(endAnimation, transform);
+            Storyboard.SetTargetProperty(endAnimation, new PropertyPath("Y"));
 
             var storyboard = new Storyboard();
             storyboard.Children.Add(transformAnimation);
+
+            var endStoryboard = new Storyboard();
+            endStoryboard.Children.Add(endAnimation);
+
+            storyboard.Completed += (s, e) =>
+            {
+                //endStoryboard.Begin();
+            };
+
             storyboard.Begin();
+
+            
+
+            
         }
     }
 }

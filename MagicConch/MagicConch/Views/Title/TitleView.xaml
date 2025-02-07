@@ -2,8 +2,12 @@
     x:Class="MagicConch.Views.Title.TitleView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cnvtrs="clr-namespace:MagicConch.Converters"
     xmlns:local="clr-namespace:MagicConch.Views.Title"
     xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support">
+    <UserControl.Resources>
+        <cnvtrs:AddValueConverter x:Key="AddValueConverter" />
+    </UserControl.Resources>
     <Border Background="Blue">
         <Grid
             x:Name="grid"
@@ -11,7 +15,7 @@
             Margin="50">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70" />
-                <RowDefinition Height="330" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="50" />
             </Grid.RowDefinitions>
 
@@ -21,13 +25,15 @@
                 x:Name="test"
                 Grid.Row="1"
                 Margin="0,50,0,0"
-                VerticalAlignment="Top" HorizontalAlignment="Center"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Delay="55"
                 FontFamily="{StaticResource BASKVILL}"
-                FontSize="250" Delay="100"
+                FontSize="250"
                 FontWeight="Bold"
                 Text="WATSON"
-                Offset="{Binding RelativeSource={RelativeSource Self},Path=ActualWidth}"
-                Duration="0:0:1.5" />
+                Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight,Converter={StaticResource AddValueConverter},ConverterParameter=300}"
+                Duration="0:0:2" />
 
         </Grid>
     </Border>
