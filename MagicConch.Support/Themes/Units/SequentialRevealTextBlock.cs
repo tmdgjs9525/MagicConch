@@ -38,6 +38,18 @@ namespace MagicConch.Support.Themes.Units
         public static readonly DependencyProperty DurationProperty =
             DependencyProperty.Register("Duration", typeof(TimeSpan), typeof(SequentialRevealTextBlock), new PropertyMetadata(new TimeSpan(0,0,1)));
 
+
+
+        public int Delay
+        {
+            get { return (int)GetValue(DelayProperty); }
+            set { SetValue(DelayProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Delay.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DelayProperty =
+            DependencyProperty.Register("Delay", typeof(int), typeof(SequentialRevealTextBlock), new PropertyMetadata(40));
+
         public int Offset
         {
             get { return (int)GetValue(OffsetProperty); }
@@ -51,6 +63,18 @@ namespace MagicConch.Support.Themes.Units
         static SequentialRevealTextBlock()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SequentialRevealTextBlock), new FrameworkPropertyMetadata(typeof(SequentialRevealTextBlock)));
+        }
+
+        public SequentialRevealTextBlock()
+        {
+            SizeChanged += SequentialRevealTextBlock_SizeChanged;    
+        }
+
+        private void SequentialRevealTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var rect = new RectangleGeometry();
+            rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
+            this.Clip = rect;
         }
 
         public override void OnApplyTemplate()
@@ -80,7 +104,7 @@ namespace MagicConch.Support.Themes.Units
             }
 
             timer.Tick += SequentialAnimation;
-            timer.Interval = TimeSpan.FromMilliseconds(60);
+            timer.Interval = TimeSpan.FromMilliseconds(Delay);
             timer.Start();
         }
 
@@ -107,7 +131,7 @@ namespace MagicConch.Support.Themes.Units
                 To = 0,
                 Duration = this.Duration,
                 BeginTime = TimeSpan.FromMilliseconds(0),
-                EasingFunction = new CircleEase { EasingMode = EasingMode.EaseOut }
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
             };
 
             Storyboard.SetTarget(transformAnimation, transform);

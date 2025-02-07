@@ -8,7 +8,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:region="clr-namespace:MagicConch.Regions"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-    Width="1920"
     Foreground="{DynamicResource Theme_TextBrush}"
     mc:Ignorable="d">
 

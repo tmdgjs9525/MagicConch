@@ -60,4 +60,8 @@
     <ProjectReference Include="..\..\MagicConch.Support\MagicConch.Support.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Converters\" />
+  </ItemGroup>
+
 </Project>
