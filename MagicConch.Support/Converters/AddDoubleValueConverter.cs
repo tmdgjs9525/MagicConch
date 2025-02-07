@@ -3,9 +3,9 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace MagicConch.Converters
+namespace MagicConch.Support.Converters
 {
-    public class AddValueConverter : IValueConverter
+    public class AddDoubleValueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
