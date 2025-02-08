@@ -11,7 +11,13 @@
     <Border>
         <Border Width="1920">
             <Border.Background>
-                <ImageBrush ImageSource="/MagicConch;component/Assets/Images/TitleViewBackground.jpg" />
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#12F9EF"/>
+                    <GradientStop Offset="0.3" Color="#61FAF8"/>
+                    <GradientStop Offset="0.6" Color="#0AC1FA"/>
+                    <GradientStop Offset="0.8" Color="#0AA3F1"/>
+                    <GradientStop Offset="1" Color="#0071E7"/>
+                </LinearGradientBrush>
             </Border.Background>
             <Grid x:Name="grid" Margin="50">
                 <Grid.RowDefinitions>
