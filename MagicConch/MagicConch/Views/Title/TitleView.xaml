@@ -8,33 +8,33 @@
     <UserControl.Resources>
         <cnvtrs:AddDoubleValueConverter x:Key="AddDoubleValueConverter" />
     </UserControl.Resources>
-    <Border Background="Blue">
-        <Grid
-            x:Name="grid"
-            Width="1920"
-            Margin="50">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="50" />
-            </Grid.RowDefinitions>
+    <Border>
+        <Border Width="1920">
+            <Border.Background>
+                <ImageBrush ImageSource="/MagicConch;component/Assets/Images/TitleViewBackground.jpg" />
+            </Border.Background>
+            <Grid x:Name="grid" Margin="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
 
-            <local:Header Grid.Row="0" />
+                <local:Header Grid.Row="0" />
 
-            <support:SequentialRevealTextBlock
-                x:Name="test"
-                Grid.Row="1"
-                Margin="0,50,0,0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Delay="55"
-                FontFamily="{StaticResource BASKVILL}"
-                FontSize="250"
-                FontWeight="Bold"
-                Text="MAGIC CONCH"
-                Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight,Converter={StaticResource AddDoubleValueConverter},ConverterParameter=300}"
-                Duration="0:0:2" />
-
-        </Grid>
+                <support:SequentialRevealTextBlock
+                    x:Name="test" Background="Red"
+                    Grid.Row="1"
+                    Margin="0,50,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Delay="55"
+                    FontFamily="{StaticResource BASKVILL}"
+                    FontSize="250"
+                    Text="MAGIC CONCH"
+                    Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight, Converter={StaticResource AddDoubleValueConverter}, ConverterParameter=300}"
+                    Duration="0:0:1.6" />
+            </Grid>
+        </Border>
     </Border>
 </UserControl>

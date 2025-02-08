@@ -4,15 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:MagicConch.Views.Title"
     xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support">
-    <UserControl.Resources>
-
-    </UserControl.Resources>
+    <UserControl.Resources />
     <Grid>
-        <support:UnderLineButton HorizontalAlignment="Left" Content="Magic conch" />
-        
+        <TextBlock
+            HorizontalAlignment="Left" FontWeight="Bold"
+            Text="Magic conch"
+            FontSize="18" />
+
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-            <support:UnderLineButton Content="Coded" />
-            <support:UnderLineButton Content="Design" Margin="20,0,0,0"/>
+            <support:UnderLineButton Content="Coded" FontSize="18" />
+            <support:UnderLineButton
+                Margin="20,0,0,0"
+                Content="Design"
+                FontSize="18" />
         </StackPanel>
     </Grid>
 </UserControl>

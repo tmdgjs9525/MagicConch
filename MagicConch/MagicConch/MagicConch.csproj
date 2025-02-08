@@ -52,6 +52,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Images\TitleViewBackground.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\Fonts\BASKVILL.TTF">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
