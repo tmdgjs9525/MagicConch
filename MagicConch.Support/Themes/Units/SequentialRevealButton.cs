@@ -9,12 +9,15 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using System.Xml.Linq;
 
 namespace MagicConch.Support.Themes.Units
 {
-    public partial class SequentialRevealTextBlock : Control, IAnimation
+    public partial class SequentialRevealButton : Button, IAnimation
     {
+        private TranslateTransform translateTransform;
         private StackPanel stackPanel;
+        private Border underLine;
         private int currentIndex = 0;
         private DispatcherTimer timer = new DispatcherTimer();
 
@@ -25,7 +28,7 @@ namespace MagicConch.Support.Themes.Units
         }
 
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register(nameof(Text), typeof(string), typeof(SequentialRevealTextBlock),
+            DependencyProperty.Register(nameof(Text), typeof(string), typeof(SequentialRevealButton),
                 new PropertyMetadata(string.Empty));
 
         public TimeSpan Duration
@@ -36,9 +39,7 @@ namespace MagicConch.Support.Themes.Units
 
         // Using a DependencyProperty as the backing store for Duration.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DurationProperty =
-            DependencyProperty.Register("Duration", typeof(TimeSpan), typeof(SequentialRevealTextBlock), new PropertyMetadata(new TimeSpan(0,0,1)));
-
-
+            DependencyProperty.Register("Duration", typeof(TimeSpan), typeof(SequentialRevealButton), new PropertyMetadata(new TimeSpan(0,0,0,1,6)));
 
         public int Delay
         {
@@ -48,7 +49,7 @@ namespace MagicConch.Support.Themes.Units
 
         // Using a DependencyProperty as the backing store for Delay.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DelayProperty =
-            DependencyProperty.Register("Delay", typeof(int), typeof(SequentialRevealTextBlock), new PropertyMetadata(40));
+            DependencyProperty.Register("Delay", typeof(int), typeof(SequentialRevealButton), new PropertyMetadata(55));
 
         public int Offset
         {
@@ -58,20 +59,68 @@ namespace MagicConch.Support.Themes.Units
 
         // Using a DependencyProperty as the backing store for Offset.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty OffsetProperty =
-            DependencyProperty.Register("Offset", typeof(int), typeof(SequentialRevealTextBlock), new PropertyMetadata(30));
+            DependencyProperty.Register("Offset", typeof(int), typeof(SequentialRevealButton), new PropertyMetadata(30));
 
-        static SequentialRevealTextBlock()
+        static SequentialRevealButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SequentialRevealTextBlock), new FrameworkPropertyMetadata(typeof(SequentialRevealTextBlock)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SequentialRevealButton), new FrameworkPropertyMetadata(typeof(SequentialRevealButton)));
         }
 
-        public SequentialRevealTextBlock()
+        public SequentialRevealButton()
         {
-            SizeChanged += SequentialRevealTextBlock_SizeChanged;    
+            SizeChanged += SequentialRevealButton_SizeChanged;
+            MouseLeave += SequentialRevealButton_MouseLeave;
+            MouseEnter += SequentialRevealButton_MouseEnter;
+            
         }
 
-        private void SequentialRevealTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void SequentialRevealButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
+            var transformAnimation = new DoubleAnimation
+            {
+                From = -ActualWidth,
+                To = 0,
+                Duration = TimeSpan.FromMilliseconds(500),
+                BeginTime = TimeSpan.FromMilliseconds(0),
+                EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
+            };
+
+            Storyboard.SetTarget(transformAnimation, translateTransform);
+            Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
+
+            var storyboard = new Storyboard();
+            storyboard.Children.Add(transformAnimation);
+
+            storyboard.Begin();
+        }
+
+        private void SequentialRevealButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            var transformAnimation = new DoubleAnimation
+            {
+                From = translateTransform.X,
+                To = ActualWidth,
+                Duration = TimeSpan.FromMilliseconds(500),
+                BeginTime = TimeSpan.FromMilliseconds(0),
+                EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
+            };
+
+            Storyboard.SetTarget(transformAnimation, translateTransform);
+            Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
+
+            var storyboard = new Storyboard();
+            storyboard.Children.Add(transformAnimation);
+
+            storyboard.Begin();
+        }
+
+        private void SequentialRevealButton_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            underLine.Width = ActualWidth;
+            translateTransform.X = -ActualWidth;
+
+            Offset = (int)ActualHeight;
+
             var rect = new RectangleGeometry();
             rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
             this.Clip = rect;
@@ -81,7 +130,10 @@ namespace MagicConch.Support.Themes.Units
         {
             base.OnApplyTemplate();
 
+            translateTransform = GetTemplateChild("underlineTransform") as TranslateTransform;
+
             stackPanel = GetTemplateChild("stackPanel") as StackPanel;
+            underLine = GetTemplateChild("underline") as Border;            
         }
 
         public void StartAnimation()
@@ -124,6 +176,8 @@ namespace MagicConch.Support.Themes.Units
         {
             var transform = new TranslateTransform { Y = Offset };
             element.RenderTransform = transform;
+
+            double to = ActualHeight * 0.1;
 
             var transformAnimation = new DoubleAnimation
             {

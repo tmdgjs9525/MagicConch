@@ -4,6 +4,7 @@
     xmlns:local="clr-namespace:MagicConch.Support.Themes.Units">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/MagicConch.Support;component/Themes/Views/SequentialRevealTextBlock.xaml" />
+        <ResourceDictionary Source="/MagicConch.Support;component/Themes/Views/SequentialRevealButton.xaml" />
         <ResourceDictionary Source="/MagicConch.Support;component/Themes/Views/UnderLineButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -6,7 +6,6 @@
     xmlns:local="clr-namespace:MagicConch.Views.Title"
     xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support">
     <UserControl.Resources>
-        <cnvtrs:AddDoubleValueConverter x:Key="AddDoubleValueConverter" />
     </UserControl.Resources>
     <Border>
         <Border Width="1920">
@@ -19,6 +18,7 @@
                     <GradientStop Offset="1" Color="#0071E7"/>
                 </LinearGradientBrush>
             </Border.Background>
+            
             <Grid x:Name="grid" Margin="50">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70" />
@@ -26,20 +26,19 @@
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
 
-                <local:Header Grid.Row="0" />
+                <local:Header x:Name="header" Grid.Row="0" />
 
                 <support:SequentialRevealTextBlock
-                    x:Name="test" Background="Red"
                     Grid.Row="1"
                     Margin="0,50,0,0"
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Center" Height="275"
                     VerticalAlignment="Top"
                     Delay="55"
                     FontFamily="{StaticResource BASKVILL}"
                     FontSize="250"
                     Text="MAGIC CONCH"
-                    Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight, Converter={StaticResource AddDoubleValueConverter}, ConverterParameter=300}"
-                    Duration="0:0:1.6" />
+                    Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                    Duration="0:0:1.2" />
             </Grid>
         </Border>
     </Border>

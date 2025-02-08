@@ -1,15 +1,19 @@
 ﻿<Application
     x:Class="MagicConch.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:cnvtrs="clr-namespace:MagicConch.Support.Converters;assembly=MagicConch.Support"
     xmlns:local="clr-namespace:MagicConch">
     <Application.Resources>
+        
+
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/MagicConch.Support;component/Themes/Generic.xaml" />
                 
             </ResourceDictionary.MergedDictionaries>
             
+            <cnvtrs:AddDoubleValueConverter x:Key="AddDoubleValueConverter" />
+
             <FontFamily x:Key="BASKVILL">/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face</FontFamily>
 
             <Style TargetType="TransitioningContentControl">

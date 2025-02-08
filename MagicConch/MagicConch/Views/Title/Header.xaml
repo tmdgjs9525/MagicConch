@@ -7,16 +7,26 @@
     <UserControl.Resources />
     <Grid>
         <TextBlock
-            HorizontalAlignment="Left" FontWeight="Bold"
-            Text="Magic conch"
-            FontSize="18" />
+            HorizontalAlignment="Left"
+            FontSize="18"
+            FontWeight="Bold"
+            Text="Magic conch" />
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-            <support:UnderLineButton Content="Coded" FontSize="18" />
-            <support:UnderLineButton
+            <support:SequentialRevealButton
+                VerticalAlignment="Top"
+                Background="Transparent"
+                FontSize="18"
+                FontWeight="Bold"
+                Text="Coded"
+                Duration="0:0:1.2" />
+            <support:SequentialRevealButton
                 Margin="20,0,0,0"
-                Content="Design"
-                FontSize="18" />
+                VerticalAlignment="Top"
+                FontSize="18"
+                FontWeight="Bold"
+                Text="Design"
+                Duration="0:0:1.2" />
         </StackPanel>
     </Grid>
 </UserControl>

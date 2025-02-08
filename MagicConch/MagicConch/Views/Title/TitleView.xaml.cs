@@ -1,4 +1,5 @@
-﻿using MagicConch.Support.Themes.Units;
+﻿using MagicConch.Support.Interfaces;
+using MagicConch.Support.Themes.Units;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,12 +16,15 @@ namespace MagicConch.Views.Title
 {
     public partial class TitleView : UserControl
     {
-        private List<SequentialRevealTextBlock> animationTextBlocks = new List<SequentialRevealTextBlock>();
+        private List<IAnimation> animationControls = new List<IAnimation>();
         public TitleView()
         {
             this.InitializeComponent();
 
             FindAllAnimationTextBlock(grid);
+            FindAllAnimationTextBlock(header);
+
+            FindLogicalChild(header);
 
             Loaded += TitleView_Loaded;
         }
@@ -32,14 +36,31 @@ namespace MagicConch.Views.Title
 
         private void CompositionTarget_Rendering(object? sender, EventArgs e)
         {
-            var a = test;
-
             CompositionTarget.Rendering -= CompositionTarget_Rendering;
 
-            foreach (SequentialRevealTextBlock block in animationTextBlocks)
+            foreach (IAnimation control in animationControls)
             {
-                block.StartAnimation();
+                control.StartAnimation();
             }
+        }
+
+        public IAnimation? FindLogicalChild(DependencyObject parent)
+        {
+            if (parent == null) return null;
+
+            foreach (var child in LogicalTreeHelper.GetChildren(parent))
+            {
+                if (child is IAnimation typedChild)
+                    animationControls.Add(typedChild);
+
+                if (child is DependencyObject depChild)
+                {
+                    var result = FindLogicalChild(depChild);
+                    if (result != null && result is IAnimation animation)
+                        animationControls.Add(animation);
+                }
+            }
+            return null;
         }
 
         public void FindAllAnimationTextBlock(DependencyObject parent)
@@ -50,11 +71,11 @@ namespace MagicConch.Views.Title
             {
                 DependencyObject child = VisualTreeHelper.GetChild(parent, i);
 
-                if (child is SequentialRevealTextBlock)
+                if (child is IAnimation)
                 {
-                    var textblock = (SequentialRevealTextBlock)child;
+                    var animatinoControl = (IAnimation)child;
                     
-                    animationTextBlocks.Add(textblock);
+                    animationControls.Add(animatinoControl);
                 }
 
                 // 자식이 또 다른 컨트롤을 가지고 있을 수 있으므로 재귀적으로 호출
