@@ -18,15 +18,17 @@
                 Background="Transparent"
                 FontSize="18"
                 FontWeight="Bold"
+                StartDelay="500"
                 Text="Coded"
-                Duration="0:0:1.2" />
+                Duration="0:0:1.4" />
             <support:SequentialRevealButton
                 Margin="20,0,0,0"
                 VerticalAlignment="Top"
                 FontSize="18"
                 FontWeight="Bold"
+                StartDelay="500"
                 Text="Design"
-                Duration="0:0:1.2" />
+                Duration="0:0:1.4" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using MagicConch.Support.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -40,6 +41,20 @@ namespace MagicConch.Support.Themes.Units
         // Using a DependencyProperty as the backing store for Duration.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DurationProperty =
             DependencyProperty.Register("Duration", typeof(TimeSpan), typeof(SequentialRevealButton), new PropertyMetadata(new TimeSpan(0,0,0,1,6)));
+
+
+
+        public int StartDelay
+        {
+            get { return (int)GetValue(StartDelayProperty); }
+            set { SetValue(StartDelayProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for StartDelay.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StartDelayProperty =
+            DependencyProperty.Register("StartDelay", typeof(int), typeof(SequentialRevealButton), new PropertyMetadata(0));
+
+
 
         public int Delay
         {
@@ -101,7 +116,7 @@ namespace MagicConch.Support.Themes.Units
                 From = translateTransform.X,
                 To = ActualWidth,
                 Duration = TimeSpan.FromMilliseconds(500),
-                BeginTime = TimeSpan.FromMilliseconds(0),
+                BeginTime = TimeSpan.FromMilliseconds(0 ),
                 EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
             };
 
@@ -136,7 +151,7 @@ namespace MagicConch.Support.Themes.Units
             underLine = GetTemplateChild("underline") as Border;            
         }
 
-        public void StartAnimation()
+        public async Task StartAnimation()
         {
             var stringList = Text.Select(s => s.ToString()).ToList();
 
@@ -153,6 +168,8 @@ namespace MagicConch.Support.Themes.Units
 
                 stackPanel.Children.Add(textBlock);
             }
+
+            await Task.Delay(StartDelay);
 
             timer.Tick += SequentialAnimation;
             timer.Interval = TimeSpan.FromMilliseconds(Delay);

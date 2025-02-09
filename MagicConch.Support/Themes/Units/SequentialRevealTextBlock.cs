@@ -4,6 +4,8 @@ using MagicConch.Support.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -50,6 +52,19 @@ namespace MagicConch.Support.Themes.Units
         public static readonly DependencyProperty DelayProperty =
             DependencyProperty.Register("Delay", typeof(int), typeof(SequentialRevealTextBlock), new PropertyMetadata(40));
 
+
+
+        public int StartDelay
+        {
+            get { return (int)GetValue(StartDelayProperty); }
+            set { SetValue(StartDelayProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for StartDelay.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StartDelayProperty =
+            DependencyProperty.Register("StartDelay", typeof(int), typeof(SequentialRevealTextBlock), new PropertyMetadata(0));
+
+
         public int Offset
         {
             get { return (int)GetValue(OffsetProperty); }
@@ -84,7 +99,7 @@ namespace MagicConch.Support.Themes.Units
             stackPanel = GetTemplateChild("stackPanel") as StackPanel;
         }
 
-        public void StartAnimation()
+        public async Task StartAnimation()
         {
             var stringList = Text.Select(s => s.ToString()).ToList();
 
@@ -101,6 +116,8 @@ namespace MagicConch.Support.Themes.Units
 
                 stackPanel.Children.Add(textBlock);
             }
+
+            await Task.Delay(StartDelay);
 
             timer.Tick += SequentialAnimation;
             timer.Interval = TimeSpan.FromMilliseconds(Delay);
