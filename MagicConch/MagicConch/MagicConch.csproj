@@ -27,6 +27,10 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\DragableConch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Views\FloattingBubble.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -49,6 +53,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions\ViewNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
+    <Compile Include="Themes\Units\DragableConch.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Themes\Units\FloattingBubble.cs">
       <SubType>Code</SubType>
     </Compile>

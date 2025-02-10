@@ -6,7 +6,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="units:FloattingBubble">
-                    <Image Source="/MagicConch;component/Assets/Images/Bubble.jpg" Width="30" Height="30"/>
+                    <Grid>
+                        <Image x:Name="Body" Source="/MagicConch;component/Assets/Images/Conch_Body.png"/>
+                        <Image x:Name="Handle" Source="/MagicConch;component/Assets/Images/Conch_Handle.png"/>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
