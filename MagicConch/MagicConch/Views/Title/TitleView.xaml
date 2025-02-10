@@ -17,7 +17,7 @@
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
-            <Canvas Background="AliceBlue"/>
+            <Canvas x:Name="BubbleCanvas" />
             <Border Width="1920">
                 <Grid x:Name="grid" Margin="50">
                     <Grid.RowDefinitions>

@@ -1,16 +1,10 @@
-﻿using MagicConch.Support.EaseFunctions;
-using MagicConch.Support.Enums;
-using MagicConch.Support.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
-using System.Xml.Linq;
 
 namespace MagicConch.Themes.Units
 {

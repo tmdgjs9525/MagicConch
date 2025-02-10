@@ -46,6 +46,7 @@
 
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions\ViewNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
     <Compile Include="Themes\Units\FloattingBubble.cs">

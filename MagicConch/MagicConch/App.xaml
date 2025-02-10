@@ -10,7 +10,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/MagicConch;component/Themes/Generic.xaml" />
-                <!--<ResourceDictionary Source="/MagicConch.Support;component/Themes/Generic.xaml" />-->
+                <ResourceDictionary Source="/MagicConch.Support;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <cnvtrs:AddDoubleValueConverter x:Key="AddDoubleValueConverter" />
