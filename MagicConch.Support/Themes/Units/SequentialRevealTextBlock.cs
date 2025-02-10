@@ -1,10 +1,6 @@
-﻿using MagicConch.Support.EaseFunctions;
-using MagicConch.Support.Enums;
-using MagicConch.Support.Interfaces;
+﻿using MagicConch.Support.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -88,7 +84,7 @@ namespace MagicConch.Support.Themes.Units
         private void SequentialRevealTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var rect = new RectangleGeometry();
-            rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
+            rect.Rect = new Rect(0, 0, ActualWidth, 223);
             this.Clip = rect;
         }
 
@@ -111,8 +107,8 @@ namespace MagicConch.Support.Themes.Units
                     FontSize = FontSize,
                     Foreground = Foreground,
                     FontWeight = FontWeight,
-                    VerticalAlignment= VerticalAlignment,
-                    HorizontalAlignment = HorizontalAlignment,
+                    VerticalAlignment= VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Center,
                     Opacity = 0,
                 };
 
@@ -150,7 +146,7 @@ namespace MagicConch.Support.Themes.Units
                 To = 0,
                 Duration = this.Duration,
                 BeginTime = TimeSpan.FromMilliseconds(0),
-                EasingFunction = new CircleEase { EasingMode = EasingMode.EaseInOut}
+                EasingFunction = new CircleEase { EasingMode = EasingMode.EaseOut}
             };
 
             Storyboard.SetTarget(transformAnimation, transform);

@@ -1,8 +1,5 @@
-﻿using MagicConch.Support.EaseFunctions;
-using MagicConch.Support.Enums;
-using MagicConch.Support.Interfaces;
+﻿using MagicConch.Support.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,7 +7,6 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
-using System.Xml.Linq;
 
 namespace MagicConch.Support.Themes.Units
 {
@@ -41,9 +37,6 @@ namespace MagicConch.Support.Themes.Units
         // Using a DependencyProperty as the backing store for Duration.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DurationProperty =
             DependencyProperty.Register("Duration", typeof(TimeSpan), typeof(SequentialRevealButton), new PropertyMetadata(new TimeSpan(0,0,0,1,6)));
-
-
-
         public int StartDelay
         {
             get { return (int)GetValue(StartDelayProperty); }
@@ -53,8 +46,6 @@ namespace MagicConch.Support.Themes.Units
         // Using a DependencyProperty as the backing store for StartDelay.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty StartDelayProperty =
             DependencyProperty.Register("StartDelay", typeof(int), typeof(SequentialRevealButton), new PropertyMetadata(0));
-
-
 
         public int Delay
         {

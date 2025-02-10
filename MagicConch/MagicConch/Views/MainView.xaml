@@ -2,10 +2,20 @@
     x:Class="MagicConch.Views.MainView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:MagicConch.Views" Background="Transparent"
+    xmlns:local="clr-namespace:MagicConch.Views"
     xmlns:title="clr-namespace:MagicConch.Views.Title">
-    
+
     <Grid>
-        <title:TitleView/>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#12F9EF" />
+                <GradientStop Offset="0.3" Color="#61FAF8" />
+                <GradientStop Offset="0.6" Color="#0AC1FA" />
+                <GradientStop Offset="0.8" Color="#0AA3F1" />
+                <GradientStop Offset="1" Color="#0071E7" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image Source="/MagicConch;component/Assets/Images/JellyFish.png" />
+        <title:TitleView Background="Transparent" />
     </Grid>
 </UserControl>

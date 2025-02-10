@@ -18,14 +18,14 @@
             <FontFamily x:Key="BASKVILL">/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face</FontFamily>
 			<FontFamily x:Key="GothamLight">/MagicConch;component/Assets/Fonts/GothamLight.ttf#Gotham</FontFamily>
 
-            <Style TargetType="TransitioningContentControl">
-                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <!--<Style TargetType="TransitioningContentControl">
+                <Setter Property="Width" Value="1920" />
+                <Setter Property="Height" Value="1080" />
             </Style>
             <Style TargetType="ContentControl">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                 <Setter Property="VerticalContentAlignment" Value="Stretch" />
-            </Style>
+            </Style>-->
         </ResourceDictionary>
     </Application.Resources>
     <Application.Theme>

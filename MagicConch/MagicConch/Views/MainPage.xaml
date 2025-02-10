@@ -10,10 +10,8 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     Foreground="{DynamicResource Theme_TextBrush}"
     mc:Ignorable="d">
-
     <Grid Background="{DynamicResource Theme_BackgroundBrush}">
-        <ScrollViewer>
-            <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
-        </ScrollViewer>
+        <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
+        <!--<Image Source="/MagicConch;component/Assets/Images/JellyFish.png"/>-->
     </Grid>
 </Page>

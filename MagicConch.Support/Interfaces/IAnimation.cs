@@ -8,6 +8,6 @@ namespace MagicConch.Support.Interfaces
 {
     public interface IAnimation
     {
-        public Task StartAnimation();
+        Task StartAnimation();
     }
 }

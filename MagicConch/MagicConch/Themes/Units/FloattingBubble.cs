@@ -110,7 +110,7 @@ namespace MagicConch.Themes.Units
 
         private void SequentialRevealButton_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            ArgumentNullException.ThrowIfNull(translateTransform);
+            //ArgumentNullException.ThrowIfNull(translateTransform);
 
             translateTransform.X = -ActualWidth;
 
