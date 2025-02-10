@@ -24,6 +24,12 @@
     <Page Include="Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Views\FloattingBubble.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -42,6 +48,9 @@
     <Compile Include="App.xaml.cs" />
     <Compile Include="Regions\ViewNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
+    <Compile Include="Themes\Units\FloattingBubble.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
@@ -49,6 +58,12 @@
     <Compile Include="Views\MainView.xaml.cs" />
     <Compile Include="Views\Title\Header.xaml.cs" />
     <Compile Include="Views\Title\TitleView.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\Bubble.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -60,10 +75,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\MagicConch.Core\MagicConch.Core.csproj" />
     <ProjectReference Include="..\..\MagicConch.Support\MagicConch.Support.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assets\Images\" />
   </ItemGroup>
 
 </Project>

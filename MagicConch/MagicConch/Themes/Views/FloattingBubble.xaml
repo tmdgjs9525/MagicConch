@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:units="clr-namespace:MagicConch.Themes.Units">
+    <Style TargetType="units:FloattingBubble">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="units:FloattingBubble">
+                    <Image Source="/MagicConch;component/Assets/Images/Bubble.jpg" Width="30" Height="30"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
