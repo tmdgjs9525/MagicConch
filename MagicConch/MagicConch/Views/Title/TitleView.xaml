@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:cnvtrs="clr-namespace:MagicConch.Support.Converters;assembly=MagicConch.Support"
     xmlns:local="clr-namespace:MagicConch.Views.Title"
-    xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support">
+    xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support"
+    Height="1080"
+    VerticalAlignment="Top">
     <UserControl.Resources />
     <Border>
         <Border.Background>
@@ -85,16 +87,13 @@
                         VerticalAlignment="Bottom"
                         Source="/MagicConch;component/Assets/Images/Logo.png" />
 
-                    <Viewbox Grid.RowSpan="4" Width="850" Height="850" Margin="120,0,0,60">
-                        <Viewbox.RenderTransform>
-                            <RotateTransform Angle="10"/>
-                        </Viewbox.RenderTransform>
-                        <Grid>
-                            <Image Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
-                            <Image Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
-                        </Grid>
-                    </Viewbox>
-
+                    <Grid Grid.RowSpan="4">
+                        <Grid.RenderTransform>
+                            <RotateTransform Angle="10" />
+                        </Grid.RenderTransform>
+                        <Image Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
+                        <Image Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
+                    </Grid>
                 </Grid>
             </Border>
         </Grid>
