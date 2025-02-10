@@ -111,6 +111,8 @@ namespace MagicConch.Support.Themes.Units
                     FontSize = FontSize,
                     Foreground = Foreground,
                     FontWeight = FontWeight,
+                    VerticalAlignment= VerticalAlignment,
+                    HorizontalAlignment = HorizontalAlignment,
                     Opacity = 0,
                 };
 

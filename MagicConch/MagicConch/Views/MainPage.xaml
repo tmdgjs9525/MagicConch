@@ -12,6 +12,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{DynamicResource Theme_BackgroundBrush}">
-        <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
+        <ScrollViewer>
+            <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
+        </ScrollViewer>
     </Grid>
 </Page>

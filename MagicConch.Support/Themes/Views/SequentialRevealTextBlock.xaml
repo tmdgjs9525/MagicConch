@@ -10,6 +10,8 @@
                     <StackPanel
                         x:Name="stackPanel"
                         Margin="{TemplateBinding Margin}"
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
                         Background="{TemplateBinding Background}"
                         Orientation="Horizontal" />
                 </ControlTemplate>
