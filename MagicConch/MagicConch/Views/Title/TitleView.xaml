@@ -40,27 +40,27 @@
                             Delay="25"
                             FontFamily="{StaticResource GothamLight}"
                             FontSize="18"
-                            StartDelay="500"
+                            StartDelay="1000"
                             Text="&quot;Don't doubt the "
                             Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
-                            Duration="0:0:0.5" />
+                            Duration="0:0:1.4" />
                         <support:SequentialRevealTextBlock
                             Delay="25"
                             FontFamily="{StaticResource GothamLight}"
                             FontSize="18"
                             FontWeight="Bold"
-                            StartDelay="1000"
+                            StartDelay="500"
                             Text="MAGIC CONCH "
                             Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
-                            Duration="0:0:0.3" />
+                            Duration="0:0:1.4" />
                         <support:SequentialRevealTextBlock
                             Delay="25"
                             FontFamily="{StaticResource GothamLight}"
                             FontSize="18"
-                            StartDelay="1300"
+                            StartDelay="1000"
                             Text="ability.&quot;"
                             Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
-                            Duration="0:0:0.3" />
+                            Duration="0:0:1.4" />
                     </StackPanel>
 
 
