@@ -11,6 +11,7 @@ namespace MagicConch.Views
     public partial class MainPageViewModel : ViewModelBase
     {
         #region fields
+        private bool _isMainView = true;
         private readonly INavigationService _navigationService;
         #endregion
 
@@ -30,10 +31,12 @@ namespace MagicConch.Views
         {
             if (e.Delta > 0)
             {
+                _isMainView = false;
                 _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.ConchView);
             }
-            else
+            else if((e.Delta < 0) && (_isMainView is false))
             {
+                _isMainView = true;
                 _navigationService.NavigateTo(RegionNames.MainRegion, ViewNames.MainView);
             }
         }

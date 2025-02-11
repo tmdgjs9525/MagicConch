@@ -33,7 +33,7 @@ namespace MagicConch.Views.Title
             {
                 var bubble = new FloattingBubble();
                 bubble.Duration = TimeSpan.FromMilliseconds(2000);
-                bubble.StartDelay = random.Next() % 1000;
+                bubble.StartDelay = random.Next() % 2000;
                 Canvas.SetLeft(bubble, random.NextDouble() * 1920);
                 Canvas.SetTop(bubble, random.NextDouble() * 1080);
                 BubbleCanvas.Children.Add(bubble);
