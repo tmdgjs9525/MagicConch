@@ -148,8 +148,6 @@ namespace MagicConch.Themes.Units
             Storyboard.SetTarget(animation, PART_TranslateTransform);
             Storyboard.SetTargetProperty(animation, new PropertyPath(TranslateTransform.YProperty));
 
-            //animation.KeyFrames.Add(new EasingDoubleKeyFrame(0, KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(500))));
-
             // 1초 후: 위로 이동 (Y = -50)
             animation.KeyFrames.Add(new EasingDoubleKeyFrame(-2, KeyTime.FromTimeSpan(Duration))
             {
