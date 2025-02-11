@@ -1,16 +1,18 @@
-﻿using System;
+﻿using MagicConch.Support.Interfaces;
+using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using System.Xml.Linq;
 
 namespace MagicConch.Themes.Units
 {
-    public partial class FloattingBubble : Control
+    public partial class FloattingBubble : Control, IAnimation
     {
-        private TranslateTransform? translateTransform;
+        private TranslateTransform? PART_TranslateTransform;
         private DispatcherTimer timer = new DispatcherTimer();
 
         public TimeSpan Duration
@@ -70,76 +72,102 @@ namespace MagicConch.Themes.Units
 
         private void SequentialRevealButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            var transformAnimation = new DoubleAnimation
-            {
-                From = -ActualWidth,
-                To = 0,
-                Duration = TimeSpan.FromMilliseconds(500),
-                BeginTime = TimeSpan.FromMilliseconds(0),
-                EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
-            };
+            //var transformAnimation = new DoubleAnimation
+            //{
+            //    From = -ActualWidth,
+            //    To = 0,
+            //    Duration = TimeSpan.FromMilliseconds(500),
+            //    BeginTime = TimeSpan.FromMilliseconds(0),
+            //    EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
+            //};
 
-            Storyboard.SetTarget(transformAnimation, translateTransform);
-            Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
+            //Storyboard.SetTarget(transformAnimation, translateTransform);
+            //Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
 
-            var storyboard = new Storyboard();
-            storyboard.Children.Add(transformAnimation);
+            //var storyboard = new Storyboard();
+            //storyboard.Children.Add(transformAnimation);
 
-            storyboard.Begin();
+            //storyboard.Begin();
         }
 
         private void SequentialRevealButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            var transformAnimation = new DoubleAnimation
-            {
-                From = translateTransform?.X,
-                To = ActualWidth,
-                Duration = TimeSpan.FromMilliseconds(500),
-                BeginTime = TimeSpan.FromMilliseconds(0 ),
-                EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
-            };
+            //var transformAnimation = new DoubleAnimation
+            //{
+            //    From = translateTransform?.X,
+            //    To = ActualWidth,
+            //    Duration = TimeSpan.FromMilliseconds(500),
+            //    BeginTime = TimeSpan.FromMilliseconds(0 ),
+            //    EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
+            //};
 
-            Storyboard.SetTarget(transformAnimation, translateTransform);
-            Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
+            //Storyboard.SetTarget(transformAnimation, translateTransform);
+            //Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
 
-            var storyboard = new Storyboard();
-            storyboard.Children.Add(transformAnimation);
+            //var storyboard = new Storyboard();
+            //storyboard.Children.Add(transformAnimation);
 
-            storyboard.Begin();
+            //storyboard.Begin();
         }
 
         private void SequentialRevealButton_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             //ArgumentNullException.ThrowIfNull(translateTransform);
 
-            translateTransform.X = -ActualWidth;
+            //translateTransform.X = -ActualWidth;
 
-            Offset = (int)ActualHeight;
+            //Offset = (int)ActualHeight;
 
-            var rect = new RectangleGeometry();
-            rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
-            this.Clip = rect;
+            //var rect = new RectangleGeometry();
+            //rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
+            //this.Clip = rect;
         }
 
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
 
-            translateTransform = (TranslateTransform)GetTemplateChild("underlineTransform");          
+            PART_TranslateTransform = (TranslateTransform)GetTemplateChild("PART_TranslateTransform");          
         }
 
         public async Task StartAnimation()
         {
             await Task.Delay(StartDelay);
 
-            timer.Tick += Animation!;
-            timer.Interval = TimeSpan.FromMilliseconds(Delay);
-            timer.Start();
+            Animation();
         }
 
-        private void Animation(object sender, EventArgs e)
+        private void Animation()
         {
+            if (PART_TranslateTransform is null)
+            {
+                return;
+            }
 
+            DoubleAnimationUsingKeyFrames animation = new DoubleAnimationUsingKeyFrames();
+            Storyboard.SetTarget(animation, PART_TranslateTransform);
+            Storyboard.SetTargetProperty(animation, new PropertyPath(TranslateTransform.YProperty));
+
+            //animation.KeyFrames.Add(new EasingDoubleKeyFrame(0, KeyTime.FromTimeSpan(TimeSpan.FromMilliseconds(500))));
+
+            // 1초 후: 위로 이동 (Y = -50)
+            animation.KeyFrames.Add(new EasingDoubleKeyFrame(-2, KeyTime.FromTimeSpan(Duration))
+            {
+                EasingFunction = new BackEase { EasingMode = EasingMode.EaseInOut }
+            });
+
+            // 2초 후: 다시 내려옴 (Y = 0)
+            animation.KeyFrames.Add(new EasingDoubleKeyFrame(0, KeyTime.FromTimeSpan(Duration.Add(Duration)))
+            {
+                EasingFunction = new BackEase { EasingMode = EasingMode.EaseInOut }
+            });
+
+            var storyboard = new Storyboard();
+            storyboard.RepeatBehavior = RepeatBehavior.Forever;
+
+            storyboard.Children.Add(animation);
+
+            storyboard.Begin();
         }
     }
 }

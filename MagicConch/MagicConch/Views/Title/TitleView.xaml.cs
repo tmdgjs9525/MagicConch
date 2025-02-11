@@ -1,5 +1,6 @@
 ﻿using MagicConch.Support.Interfaces;
 using MagicConch.Support.Themes.Units;
+using MagicConch.Themes.Units;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,12 +32,23 @@ namespace MagicConch.Views.Title
 
         private void TitleView_Loaded(object sender, RoutedEventArgs e)
         {
+            for (int i = 0; i < 10; i++)
+            {
+                var bubble = new FloattingBubble();
+                bubble.Duration = TimeSpan.FromMilliseconds(2000);
+                Canvas.SetLeft(bubble, new Random().NextDouble() * 1920);
+                Canvas.SetTop(bubble, new Random().NextDouble() * 1080);
+                BubbleCanvas.Children.Add(bubble);
+            }
+
             CompositionTarget.Rendering += CompositionTarget_Rendering;
         }
 
         private void CompositionTarget_Rendering(object? sender, EventArgs e)
         {
             CompositionTarget.Rendering -= CompositionTarget_Rendering;
+
+            animationControls.AddRange(BubbleCanvas.Children.OfType<IAnimation>());
 
             foreach (IAnimation control in animationControls)
             {

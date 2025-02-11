@@ -17,6 +17,5 @@
         </Grid.Background>
         <Image Source="/MagicConch;component/Assets/Images/JellyFish.png" />
         <title:TitleView Background="Transparent" Width="1920" Height="1080" VerticalAlignment="Top"/>
-        <Button Command="{Binding testCommand}"/>
     </Grid>
 </UserControl>

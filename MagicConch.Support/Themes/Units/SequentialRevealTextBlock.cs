@@ -144,7 +144,7 @@ namespace MagicConch.Support.Themes.Units
             {
                 From = Offset,
                 To = 0,
-                Duration = this.Duration,
+                Duration = Duration,
                 BeginTime = TimeSpan.FromMilliseconds(0),
                 EasingFunction = new CircleEase { EasingMode = EasingMode.EaseOut}
             };

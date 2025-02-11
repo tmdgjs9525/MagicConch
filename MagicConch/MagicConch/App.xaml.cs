@@ -17,7 +17,7 @@ namespace MagicConch
         {
             this.InitializeComponent();
 
-            kernel = semanticKernelBuild();
+            //kernel = semanticKernelBuild();
 
             IServiceProvider provider = serviceInitialize();
 
@@ -31,11 +31,7 @@ namespace MagicConch
         {
             ServiceCollection services = new ServiceCollection();
 
-            var ichat = kernel.Services.GetRequiredService<IChatCompletionService>();
-
-            services.AddSingleton<IChatCompletionService>(ichat);
-
-            IServiceProvider provider = Configure.ConfigureService(services);
+            IServiceProvider provider = ConfigureService(services);
 
             Ioc.Default.ConfigureServices(provider);
 
@@ -55,11 +51,8 @@ namespace MagicConch
 
             return kernel;
         }
-    }
 
-    internal static class Configure
-    {
-        public static IServiceProvider ConfigureService(this IServiceCollection services)
+        public IServiceProvider ConfigureService(IServiceCollection services)
         {
             services.AddSingleton<MainPage>();
             services.AddSingleton<MainPageViewModel>();
@@ -68,7 +61,19 @@ namespace MagicConch
 
             container.AddSingletonNavigation<MainView, MainViewModel>();
 
+            if (kernel is not null)
+            {
+                var ichat = kernel.Services.GetRequiredService<IChatCompletionService>();
+
+                services.AddSingleton<IChatCompletionService>(ichat);
+            }
+
             return services.BuildServiceProvider();
         }
+    }
+
+    internal static class Configure
+    {
+        
     }
 }

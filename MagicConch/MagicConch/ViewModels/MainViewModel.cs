@@ -13,16 +13,16 @@ namespace MagicConch.Views
     {
         #region fields
         private readonly INavigationService _navigationService;
-        private readonly IChatCompletionService _chatCompletionService;
+        private readonly IChatCompletionService? _chatCompletionService;
         #endregion
 
         #region properties
 
         #endregion
-        public MainViewModel(INavigationService navigationService, IChatCompletionService chatCompletionService)
+        public MainViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            _chatCompletionService = chatCompletionService;
+           // _chatCompletionService = chatCompletionService;
             
         }
 
