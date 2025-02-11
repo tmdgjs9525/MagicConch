@@ -17,6 +17,7 @@ namespace MagicConch.Views.Title
 {
     public partial class TitleView : UserControl
     {
+        private bool isLoaded = false;
         private List<IAnimation> animationControls = new List<IAnimation>();
         public TitleView()
         {
@@ -27,11 +28,6 @@ namespace MagicConch.Views.Title
 
             FindLogicalChild(header);
 
-            Loaded += TitleView_Loaded;
-        }
-
-        private void TitleView_Loaded(object sender, RoutedEventArgs e)
-        {
             Random random = new Random();
             for (int i = 0; i < 10; i++)
             {
@@ -43,19 +39,33 @@ namespace MagicConch.Views.Title
                 BubbleCanvas.Children.Add(bubble);
             }
 
-            CompositionTarget.Rendering += CompositionTarget_Rendering;
+            animationControls.AddRange(BubbleCanvas.Children.OfType<IAnimation>());
+            Loaded += TitleView_Loaded;
+        }
+
+        private void TitleView_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (isLoaded == true)
+            {
+                return;
+            }
+
+            isLoaded = true;
+            Dispatcher.BeginInvoke((Action)(() =>
+            {
+                foreach (IAnimation control in animationControls)
+                {
+                    control.StartAnimation();
+                }
+            }));
         }
 
         private void CompositionTarget_Rendering(object? sender, EventArgs e)
         {
-            CompositionTarget.Rendering -= CompositionTarget_Rendering;
-
-            animationControls.AddRange(BubbleCanvas.Children.OfType<IAnimation>());
-
-            foreach (IAnimation control in animationControls)
-            {
-                control.StartAnimation();
-            }
+            //foreach (IAnimation control in animationControls)
+            //{
+            //    control.StartAnimation();
+            //}
         }
 
         public IAnimation? FindLogicalChild(DependencyObject parent)

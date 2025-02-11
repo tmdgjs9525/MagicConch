@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using MagicConch.Core;
+using MagicConch.ViewModels;
 using MagicConch.Views;
+using MagicConch.Views.Conch;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
@@ -59,7 +61,8 @@ namespace MagicConch
 
             Container container = new Container(services);
 
-            container.AddSingletonNavigation<MainView, MainViewModel>();
+            container.AddTransientNavigation<MainView, MainViewModel>();
+            container.AddSingletonNavigation<ConchView, ConchViewModel>();
 
             if (kernel is not null)
             {

@@ -129,5 +129,10 @@ namespace MagicConch.Themes.Units
 
             storyboard.Begin();
         }
+
+        public void SetHidden()
+        {
+            
+        }
     }
 }

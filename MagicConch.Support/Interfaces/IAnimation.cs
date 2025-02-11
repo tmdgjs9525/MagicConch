@@ -9,5 +9,7 @@ namespace MagicConch.Support.Interfaces
     public interface IAnimation
     {
         Task StartAnimation();
+
+        void SetHidden();
     }
 }

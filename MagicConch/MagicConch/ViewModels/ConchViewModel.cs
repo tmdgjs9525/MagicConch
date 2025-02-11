@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MagicConch.ViewModels
 {
-    internal partial class QuestionViewModel : ViewModelBase
+    internal partial class ConchViewModel : ViewModelBase
     {
-        public QuestionViewModel()
+        public ConchViewModel()
         {
                 
         }

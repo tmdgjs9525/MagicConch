@@ -139,11 +139,8 @@ namespace MagicConch.Support.Themes.Units
             translateTransform = GetTemplateChild("underlineTransform") as TranslateTransform;
 
             stackPanel = GetTemplateChild("stackPanel") as StackPanel;
-            underLine = GetTemplateChild("underline") as Border;            
-        }
+            underLine = GetTemplateChild("underline") as Border;
 
-        public async Task StartAnimation()
-        {
             var stringList = Text.Select(s => s.ToString()).ToList();
 
             for (int i = 0; i < stringList.Count; i++)
@@ -159,7 +156,10 @@ namespace MagicConch.Support.Themes.Units
 
                 stackPanel.Children.Add(textBlock);
             }
+        }
 
+        public async Task StartAnimation()
+        {
             await Task.Delay(StartDelay);
 
             timer.Tick += SequentialAnimation;
@@ -175,6 +175,7 @@ namespace MagicConch.Support.Themes.Units
 
             if (currentIndex >= stackPanel.Children.Count)
             {
+                timer.Tick -= SequentialAnimation;
                 timer.Stop();
                 currentIndex = 0;
             }
@@ -203,6 +204,14 @@ namespace MagicConch.Support.Themes.Units
             storyboard.Children.Add(transformAnimation);
 
             storyboard.Begin();
+        }
+
+        public void SetHidden()
+        {
+            foreach (var child in stackPanel.Children)
+            {
+                ((TextBlock)child).Opacity = 0;
+            }
         }
     }
 }

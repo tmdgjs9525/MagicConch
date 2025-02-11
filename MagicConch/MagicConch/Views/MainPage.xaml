@@ -3,13 +3,18 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:RegionManager="clr-namespace:MagicConch.Core.Region;assembly=MagicConch.Core"
+    xmlns:behavior="clr-namespace:MagicConch.Behavior"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:local="clr-namespace:MagicConch"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:region="clr-namespace:MagicConch.Regions"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     Foreground="{DynamicResource Theme_TextBrush}"
     mc:Ignorable="d">
+    <i:Interaction.Behaviors>
+        <behavior:MouseWheelBehavior MouseWheelCommand="{Binding MouseWheelCommand}"/>
+    </i:Interaction.Behaviors>
     <Grid Background="{DynamicResource Theme_BackgroundBrush}">
         <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
     </Grid>

@@ -7,5 +7,6 @@ namespace MagicConch.Regions
     internal static class ViewNames
     {
         public static string MainView = "MainView";
+        public static string ConchView = "ConchView";
     }
 }
