@@ -72,55 +72,17 @@ namespace MagicConch.Themes.Units
 
         private void SequentialRevealButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            //var transformAnimation = new DoubleAnimation
-            //{
-            //    From = -ActualWidth,
-            //    To = 0,
-            //    Duration = TimeSpan.FromMilliseconds(500),
-            //    BeginTime = TimeSpan.FromMilliseconds(0),
-            //    EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
-            //};
 
-            //Storyboard.SetTarget(transformAnimation, translateTransform);
-            //Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
-
-            //var storyboard = new Storyboard();
-            //storyboard.Children.Add(transformAnimation);
-
-            //storyboard.Begin();
         }
 
         private void SequentialRevealButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            //var transformAnimation = new DoubleAnimation
-            //{
-            //    From = translateTransform?.X,
-            //    To = ActualWidth,
-            //    Duration = TimeSpan.FromMilliseconds(500),
-            //    BeginTime = TimeSpan.FromMilliseconds(0 ),
-            //    EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
-            //};
 
-            //Storyboard.SetTarget(transformAnimation, translateTransform);
-            //Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
-
-            //var storyboard = new Storyboard();
-            //storyboard.Children.Add(transformAnimation);
-
-            //storyboard.Begin();
         }
 
         private void SequentialRevealButton_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            //ArgumentNullException.ThrowIfNull(translateTransform);
 
-            //translateTransform.X = -ActualWidth;
-
-            //Offset = (int)ActualHeight;
-
-            //var rect = new RectangleGeometry();
-            //rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
-            //this.Clip = rect;
         }
 
         public override void OnApplyTemplate()
@@ -149,7 +111,7 @@ namespace MagicConch.Themes.Units
             Storyboard.SetTargetProperty(animation, new PropertyPath(TranslateTransform.YProperty));
 
             // 1초 후: 위로 이동 (Y = -50)
-            animation.KeyFrames.Add(new EasingDoubleKeyFrame(-2, KeyTime.FromTimeSpan(Duration))
+            animation.KeyFrames.Add(new EasingDoubleKeyFrame(-5, KeyTime.FromTimeSpan(Duration))
             {
                 EasingFunction = new BackEase { EasingMode = EasingMode.EaseInOut }
             });
