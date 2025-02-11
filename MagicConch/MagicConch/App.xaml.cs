@@ -11,7 +11,7 @@ namespace MagicConch
 {
     public sealed partial class App : Application
     {
-        private Kernel kernel;
+        private Kernel? kernel;
 
         public App()
         {

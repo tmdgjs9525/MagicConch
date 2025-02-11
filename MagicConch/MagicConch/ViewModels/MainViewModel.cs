@@ -12,8 +12,11 @@ namespace MagicConch.Views
     public partial class MainViewModel : ViewModelBase
     {
         #region fields
+
         private readonly INavigationService _navigationService;
-        private readonly IChatCompletionService? _chatCompletionService;
+        //api key 생성 후 nullable 경고 처리
+        private readonly IChatCompletionService _chatCompletionService;
+
         #endregion
 
         #region properties
