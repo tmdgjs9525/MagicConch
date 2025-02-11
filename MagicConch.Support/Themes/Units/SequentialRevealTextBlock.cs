@@ -104,11 +104,9 @@ namespace MagicConch.Support.Themes.Units
                     FontSize = FontSize,
                     Foreground = Foreground,
                     FontWeight = FontWeight,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    Opacity = 0,
+                    Opacity = 0, Padding = new Thickness(0),
                 };
-
+                
                 stackPanel.Children.Add(textBlock);
             }
 

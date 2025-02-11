@@ -13,22 +13,22 @@
             Text="Magic conch" />
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-            <support:SequentialRevealButton
+            <support:UnderLineButton
                 VerticalAlignment="Top"
                 Background="Transparent"
                 FontFamily="{StaticResource GothamLight}"
-                FontSize="18"
-                StartDelay="500"
+                FontSize="18"/>
+            <!--StartDelay="400"
                 Text="Coded"
-                Duration="0:0:1.4" />
-            <support:SequentialRevealButton
+                Duration="0:0:0.6"-->
+            <support:UnderLineButton
                 Margin="20,0,0,0"
                 VerticalAlignment="Top"
                 FontFamily="{StaticResource GothamLight}"
-                FontSize="18"
-                StartDelay="500"
+                FontSize="18"/>
+            <!--StartDelay="400"
                 Text="Design"
-                Duration="0:0:1.4" />
+                Duration="0:0:0.6"--> 
         </StackPanel>
     </Grid>
 </UserControl>
