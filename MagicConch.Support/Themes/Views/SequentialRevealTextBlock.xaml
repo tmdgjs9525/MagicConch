@@ -9,10 +9,12 @@
                 <ControlTemplate TargetType="units:SequentialRevealTextBlock">
                     <StackPanel
                         x:Name="stackPanel"
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
                         Background="{TemplateBinding Background}"
                         Orientation="Horizontal" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-</ResourceDictionary>
+</ResourceDictionary>   

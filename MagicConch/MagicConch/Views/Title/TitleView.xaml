@@ -14,19 +14,27 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                
+
                 <local:Header x:Name="header" Grid.Row="0" />
-                
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Image
+                    Grid.RowSpan="4"
+                    Width="1000"
+                    Height="1000"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="/MagicConch;component/Assets/Images/Conch_Glow.png" />
+
+                <StackPanel Grid.Row="1" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
                     <support:SequentialRevealTextBlock
                         Grid.Row="1"
-                        Height="255"
+                        Height="255" 
                         Margin="0,0,0,0"
-                        VerticalAlignment="Top"
+                        VerticalContentAlignment="Bottom" VerticalAlignment="Top"
                         Delay="100"
                         FontFamily="{StaticResource BASKVILL}"
-                        FontSize="250"
-                        StartDelay="300" 
+                        FontSize="250" Background="Blue"
+                        StartDelay="300"
                         Text="MAGIC "
                         Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
                         Duration="0:0:1.8" />
@@ -45,23 +53,48 @@
 
                 </StackPanel>
 
-                
-                <!--<Grid Grid.RowSpan="4" IsHitTestVisible="False">
-                    <Image x:Name="Body" Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
-                    <Image x:Name="Handle" Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
-                </Grid>-->
+
+                <Grid
+                    Grid.Row="0"
+                    Grid.RowSpan="4"
+                    IsHitTestVisible="False">
+                    <Image
+                        Width="580"
+                        Height="580"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
+                    <Image
+                        Width="580"
+                        Height="580"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
+                </Grid>
 
                 <Button
                     Grid.Row="2"
-                    Width="300"
-                    Height="300"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
+                    VerticalContentAlignment="Bottom"
                     Background="Transparent">
                     <Button.Content>
-                        <Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/AlarmClock.png" />
+                        <Image
+                            Width="200"
+                            Height="200"
+                            IsHitTestVisible="False"
+                            Source="/MagicConch;component/Assets/Images/AlarmClock.png" />
                     </Button.Content>
                 </Button>
+
+                <TextBlock
+                    Grid.Row="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    CharacterSpacing="-40"
+                    FontFamily="{StaticResource GothamBook}"
+                    FontSize="24"
+                    Text="Ask the magic conch anything and follow that answer, Luck will be with you in any form" />
             </Grid>
 
 

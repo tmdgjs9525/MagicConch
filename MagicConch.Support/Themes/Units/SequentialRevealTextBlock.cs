@@ -87,6 +87,8 @@ namespace MagicConch.Support.Themes.Units
             var rect = new RectangleGeometry();
             rect.Rect = new Rect(0, 0, ActualWidth, Height);
             this.Clip = rect;
+
+            var a = stackPanel;
         }
 
         public override void OnApplyTemplate()
@@ -95,20 +97,21 @@ namespace MagicConch.Support.Themes.Units
 
             stackPanel = GetTemplateChild("stackPanel") as StackPanel;
 
-            var stringList = Text.Select(s => s.ToString()).ToList();
+            var splitedText = Text.Select(s => s.ToString()).ToList();
 
-            for (int i = 0; i < stringList.Count; i++)
+            for (int i = 0; i < splitedText.Count; i++)
             {
                 var textBlock = new TextBlock
                 {
-                    Text = stringList[i],
+                    Text = splitedText[i],
                     FontSize = FontSize,
                     Foreground = Foreground,
+                    VerticalAlignment = VerticalAlignment,
+                    HorizontalAlignment = HorizontalAlignment,
                     FontWeight = FontWeight,
                     IsHitTestVisible = false,
-                    Opacity = 0, Padding = new Thickness(0),
+                    Opacity = 0,
                 };
-                
                 stackPanel.Children.Add(textBlock);
             }
 

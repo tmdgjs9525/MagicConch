@@ -8,31 +8,35 @@
     <Grid>
         <TextBlock
             HorizontalAlignment="Left"
-            FontFamily="{StaticResource GothamLight}"
-            FontSize="18"
-            Text="Magic conch" />
+            CharacterSpacing="-40"
+            FontFamily="{StaticResource GothamBook}"
+            FontSize="24"
+            Text="9:00 PM, KST ● Korea" />
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
             <support:UnderLineButton
                 Background="Transparent"
-                FontFamily="{StaticResource GothamLight}"
-                FontSize="18"
-                Content="Coded" />
-            <!--
-                StartDelay="400"
-                
-                Duration="0:0:0.6"
-            -->
+                Content="Coded"
+                FontFamily="{StaticResource GothamBook}"
+                FontSize="24" />
+
             <support:UnderLineButton
                 Margin="20,0,0,0"
-                FontFamily="{StaticResource GothamLight}"
-                FontSize="18"
-                Content="Design" />
-            <!--
-                StartDelay="400"
-                
-                Duration="0:0:0.6"
-            -->
+                Content="Design"
+                FontFamily="{StaticResource GothamBook}"
+                FontSize="24" />
         </StackPanel>
+
+        <StackPanel HorizontalAlignment="Right">
+            <TextBlock
+                CharacterSpacing="-40"
+                FontFamily="{StaticResource GothamBook}"
+                FontSize="24"
+                Text="Sound : ON" />
+        </StackPanel>
+
     </Grid>
 </UserControl>

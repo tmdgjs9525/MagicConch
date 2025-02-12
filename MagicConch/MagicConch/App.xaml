@@ -17,6 +17,7 @@
 
             <FontFamily x:Key="BASKVILL">/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face</FontFamily>
 			<FontFamily x:Key="GothamLight">/MagicConch;component/Assets/Fonts/GothamLight.ttf#Gotham</FontFamily>
+            <FontFamily x:Key="GothamBook">/MagicConch;component/Assets/Fonts/GothamBook.ttf#Gotham</FontFamily>
 
             <Style TargetType="TransitioningContentControl">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />

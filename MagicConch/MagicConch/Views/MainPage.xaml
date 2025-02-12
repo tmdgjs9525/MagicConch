@@ -13,13 +13,11 @@
     Foreground="{DynamicResource Theme_TextBrush}"
     mc:Ignorable="d">
     <i:Interaction.Behaviors>
-        <behavior:MouseWheelBehavior MouseWheelCommand="{Binding MouseWheelCommand}"/>
+        <behavior:MouseWheelBehavior MouseWheelCommand="{Binding MouseWheelCommand}" />
     </i:Interaction.Behaviors>
     <Grid Background="{DynamicResource Theme_BackgroundBrush}">
-        <Viewbox Stretch="UniformToFill">
-            <Grid Width="1920" Height="950">
-                <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
-            </Grid>
-        </Viewbox>
+
+        <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
+
     </Grid>
 </Page>

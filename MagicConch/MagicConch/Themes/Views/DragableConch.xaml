@@ -16,10 +16,10 @@
 
                         <Border x:Name="PART_Handle" Canvas.Left="490" Canvas.Top="120" Background="Transparent">
                             <Image
-                                Width="150"
-                                Height="150"
+                                Width="91.9794"
+                                Height="96.4977"
                                 IsHitTestVisible="False"
-                                Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
+                                Source="/MagicConch;component/Assets/Images/Conch_Handle_Crop.png" />
                         </Border>
 
                     </Canvas>
