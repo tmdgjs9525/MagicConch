@@ -6,7 +6,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="units:FloattingBubble">
-                    <Image Source="/MagicConch;component/Assets/Images/Bubble.png" Width="200" Height="200" x:Name="PART_Image">
+                    <Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/Bubble.png" Width="200" Height="200" x:Name="PART_Image">
                         <Image.RenderTransform>
                             <TranslateTransform x:Name="PART_TranslateTransform"/>
                         </Image.RenderTransform>

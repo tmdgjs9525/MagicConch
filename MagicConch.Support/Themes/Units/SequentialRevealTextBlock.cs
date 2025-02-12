@@ -105,6 +105,7 @@ namespace MagicConch.Support.Themes.Units
                     FontSize = FontSize,
                     Foreground = Foreground,
                     FontWeight = FontWeight,
+                    IsHitTestVisible = false,
                     Opacity = 0, Padding = new Thickness(0),
                 };
                 

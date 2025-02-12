@@ -12,7 +12,7 @@ namespace MagicConch.Themes.Units
     {
         private Canvas? ConchCanvas;
         private Image? Part_Body;
-        private Image? Part_Handle;
+        private Border? Part_Handle;
         private Point _offset;  
         private bool isPressed = false;
 
@@ -27,7 +27,7 @@ namespace MagicConch.Themes.Units
 
             ConchCanvas = GetTemplateChild("PART_ConchCanvas") as Canvas;
             Part_Body = GetTemplateChild("PART_Body") as Image;
-            Part_Handle = GetTemplateChild("PART_Handle") as Image;
+            Part_Handle = GetTemplateChild("PART_Handle") as Border;
 
             if( Part_Handle is not null)
             {
@@ -35,6 +35,8 @@ namespace MagicConch.Themes.Units
                 Part_Handle.MouseLeftButtonUp += Part_Handle_MouseLeftButtonUp;
                 Part_Handle.MouseMove += Part_Handle_MouseMove;
             }
+
+            
         }
 
         private void Part_Handle_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -55,14 +57,14 @@ namespace MagicConch.Themes.Units
             if (isPressed is true)
             {
                 Point point = e.GetPosition(ConchCanvas);
-                Thickness margin = new Thickness();
-                margin.Left = point.X - _offset.X;
-                margin.Top = point.Y - _offset.Y;
+                //Thickness margin = new Thickness();
+                //margin.Left = point.X - _offset.X;
+                //margin.Top = point.Y - _offset.Y;
 
-                Part_Handle!.Margin = margin;
+                //Part_Handle!.Margin = margin;
 
-                //Canvas.SetLeft(Part_Handle, point.X - _offset.X);
-                //Canvas.SetTop(Part_Handle, point.Y - _offset.Y);
+                Canvas.SetLeft(Part_Handle, point.X - _offset.X);
+                Canvas.SetTop(Part_Handle, point.Y - _offset.Y);
             }
         }
     }
