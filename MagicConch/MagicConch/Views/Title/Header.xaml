@@ -10,6 +10,7 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <TextBlock
+                VerticalAlignment="Center"
                 CharacterSpacing="-40"
                 FontFamily="{StaticResource GothamBook}"
                 FontSize="24"
@@ -26,7 +27,9 @@
             </TextBlock>
 
             <TextBlock
-                CharacterSpacing="-40" Margin="5,0,0,0"
+                Margin="5,0,0,0"
+                VerticalAlignment="Center"
+                CharacterSpacing="-40"
                 FontFamily="{StaticResource GothamBook}"
                 FontSize="24"
                 Text="{Binding CountryName}" />
