@@ -16,6 +16,10 @@
         <behavior:MouseWheelBehavior MouseWheelCommand="{Binding MouseWheelCommand}"/>
     </i:Interaction.Behaviors>
     <Grid Background="{DynamicResource Theme_BackgroundBrush}">
-        <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
+        <Viewbox Stretch="UniformToFill">
+            <Grid Width="1920" Height="970">
+                <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
+            </Grid>
+        </Viewbox>
     </Grid>
 </Page>

@@ -12,11 +12,10 @@
                             IsHitTestVisible="False"
                             Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
 
-                        <Border Canvas.Left="500"
+                        <Border 
                             x:Name="PART_Handle"
-                            Width="500"
-                            Height="500"
-                            Background="Red" >
+                            
+                            Background="Transparent" >
                             <Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
                         </Border>
 

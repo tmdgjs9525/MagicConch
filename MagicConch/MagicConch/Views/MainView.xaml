@@ -16,12 +16,10 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Viewbox Stretch="UniformToFill">
-            <Grid Width="1920" Height="970">
-                <Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/JellyFish.png" />
-                <title:TitleView Margin="50" Background="Transparent" />
-            </Grid>
-        </Viewbox>
+        <Grid>
+            <Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/JellyFish.png" />
+            <title:TitleView Margin="50" Background="Transparent" />
+        </Grid>
     </Grid>
 
 </UserControl>

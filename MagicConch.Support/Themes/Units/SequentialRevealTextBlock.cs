@@ -85,7 +85,7 @@ namespace MagicConch.Support.Themes.Units
         private void SequentialRevealTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var rect = new RectangleGeometry();
-            rect.Rect = new Rect(0, 0, ActualWidth, 223);
+            rect.Rect = new Rect(0, 0, ActualWidth, Height);
             this.Clip = rect;
         }
 
