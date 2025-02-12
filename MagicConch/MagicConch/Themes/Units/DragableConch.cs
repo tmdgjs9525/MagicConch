@@ -4,18 +4,20 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace MagicConch.Themes.Units
 {
     public partial class DragableConch : Control
     {
-        private Canvas? ConchCanvas;
-        private Image? Part_Body;
-        private Border? Part_Handle;
-        private Point _offset;  
+        private Canvas ConchCanvas = null!;
+        private Image Part_Body = null!;
+        private Border Part_Handle = null!;
+        private Point offset;  
         private bool isPressed = false;
 
+        private Line line;
         static DragableConch()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DragableConch), new FrameworkPropertyMetadata(typeof(DragableConch)));
@@ -25,18 +27,29 @@ namespace MagicConch.Themes.Units
         {
             base.OnApplyTemplate();
 
-            ConchCanvas = GetTemplateChild("PART_ConchCanvas") as Canvas;
-            Part_Body = GetTemplateChild("PART_Body") as Image;
-            Part_Handle = GetTemplateChild("PART_Handle") as Border;
+            ConchCanvas = (Canvas)GetTemplateChild("PART_ConchCanvas");
+            Part_Body = (Image)GetTemplateChild("PART_Body");
+            Part_Handle = (Border)GetTemplateChild("PART_Handle");
 
-            if( Part_Handle is not null)
-            {
-                Part_Handle.MouseLeftButtonDown += Part_Handle_MouseLeftButtonDown;
-                Part_Handle.MouseLeftButtonUp += Part_Handle_MouseLeftButtonUp;
-                Part_Handle.MouseMove += Part_Handle_MouseMove;
-            }
+            Part_Handle.MouseLeftButtonDown += Part_Handle_MouseLeftButtonDown;
+            Part_Handle.MouseLeftButtonUp += Part_Handle_MouseLeftButtonUp;
+            Part_Handle.MouseMove += Part_Handle_MouseMove;
 
-            
+            Canvas.SetZIndex(Part_Body, 0);
+            Canvas.SetZIndex(Part_Handle, 2);
+
+            SizeChanged += DragableConch_SizeChanged;
+        }
+
+        private void DragableConch_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double x = Canvas.GetLeft(Part_Handle) + 17;
+            double y = Canvas.GetTop(Part_Handle) + Part_Handle.ActualHeight -20;
+
+            line = new Line() { X1 = x, Y1 = y, X2 = x, Y2 = y, Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 2 };
+
+            ConchCanvas.Children.Add(line);
+            Canvas.SetZIndex(line, 1);
         }
 
         private void Part_Handle_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -48,7 +61,7 @@ namespace MagicConch.Themes.Units
         private void Part_Handle_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             isPressed = true;
-            _offset = e.GetPosition(Part_Handle);
+            offset = e.GetPosition(Part_Handle);
             Part_Handle?.CaptureMouse();
         }
 
@@ -61,10 +74,16 @@ namespace MagicConch.Themes.Units
                 //margin.Left = point.X - _offset.X;
                 //margin.Top = point.Y - _offset.Y;
 
-                //Part_Handle!.Margin = margin;
+                //Part_Handle.Margin = margin;
 
-                Canvas.SetLeft(Part_Handle, point.X - _offset.X);
-                Canvas.SetTop(Part_Handle, point.Y - _offset.Y);
+                double x = point.X - offset.X;
+                double y = point.Y - offset.Y;
+
+                Canvas.SetLeft(Part_Handle, x);
+                Canvas.SetTop(Part_Handle, y);
+
+                line.X2 = x + 10;
+                line.Y2 = y + Part_Handle.ActualHeight - 10;
             }
         }
     }

@@ -27,10 +27,10 @@
                         FontFamily="{StaticResource BASKVILL}"
                         FontSize="250"
                         StartDelay="300" 
-                        Text="WATSON"
+                        Text="MAGIC "
                         Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
                         Duration="0:0:1.8" />
-                    <!--<support:SequentialRevealTextBlock
+                    <support:SequentialRevealTextBlock
                         Grid.Row="1"
                         Height="255"
                         Margin="0,0,0,0"
@@ -38,10 +38,10 @@
                         Delay="75"
                         FontFamily="{StaticResource BASKVILL}"
                         FontSize="250"
-                        StartDelay="600"
+                        StartDelay="850"
                         Text="CONCH"
                         Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
-                        Duration="0:0:1.5" />-->
+                        Duration="0:0:1.8" />
 
                 </StackPanel>
 

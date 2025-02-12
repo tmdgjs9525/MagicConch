@@ -17,7 +17,7 @@
     </i:Interaction.Behaviors>
     <Grid Background="{DynamicResource Theme_BackgroundBrush}">
         <Viewbox Stretch="UniformToFill">
-            <Grid Width="1920" Height="970">
+            <Grid Width="1920" Height="950">
                 <TransitioningContentControl RegionManager:RegionManager.RegionName="MainRegion" />
             </Grid>
         </Viewbox>
