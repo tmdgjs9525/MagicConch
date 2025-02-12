@@ -1,4 +1,5 @@
-﻿using MagicConch.Support.Interfaces;
+﻿using MagicConch.Support.EaseFunctions;
+using MagicConch.Support.Interfaces;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -146,7 +147,7 @@ namespace MagicConch.Support.Themes.Units
                 To = 0,
                 Duration = Duration,
                 BeginTime = TimeSpan.FromMilliseconds(0),
-                EasingFunction = new CircleEase { EasingMode = EasingMode.EaseOut}
+                EasingFunction = new CustomEase { EasingMode = EasingMode.EaseOut}
             };
 
             Storyboard.SetTarget(transformAnimation, transform);

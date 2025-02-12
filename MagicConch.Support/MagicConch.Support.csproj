@@ -9,6 +9,7 @@
   <ItemGroup>
     <Compile Include="Converters\AddDoubleValueConverter.cs" />
     <Compile Include="Converters\NegativeValueConverter.cs" />
+    <Compile Include="EaseFunctions\CusotmEase.cs" />
     <Compile Include="Enums\Direction.cs" />
     <Compile Include="Interfaces\IAnimation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -37,10 +38,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="EaseFunctions\" />
   </ItemGroup>
 
 </Project>

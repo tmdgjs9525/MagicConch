@@ -6,10 +6,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="units:DragableConch">
-                    <Grid>
-                        <Image x:Name="Body" Source="/MagicConch;component/Assets/Images/Conch_Body.png"/>
-                        <Image x:Name="Handle" Source="/MagicConch;component/Assets/Images/Conch_Handle.png"/>
-                    </Grid>
+                        <Grid>
+                            <Image x:Name="PART_Body" Source="/MagicConch;component/Assets/Images/Conch_Body.png"/>
+                            <Image x:Name="PART_Handle" Source="/MagicConch;component/Assets/Images/Conch_Handle.png"/>
+                        </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
