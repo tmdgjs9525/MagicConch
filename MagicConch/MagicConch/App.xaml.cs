@@ -3,6 +3,7 @@ using MagicConch.Core;
 using MagicConch.ViewModels;
 using MagicConch.Views;
 using MagicConch.Views.Conch;
+using MagicConch.Views.Title;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;

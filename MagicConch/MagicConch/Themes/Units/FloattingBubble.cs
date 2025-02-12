@@ -72,17 +72,17 @@ namespace MagicConch.Themes.Units
 
         private void SequentialRevealButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-
+            //Dodge
         }
 
         private void SequentialRevealButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-
+            //Dodge
         }
 
         private void SequentialRevealButton_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-
+            //Dodge
         }
 
         public override void OnApplyTemplate()
@@ -107,8 +107,11 @@ namespace MagicConch.Themes.Units
             }
 
             DoubleAnimationUsingKeyFrames animation = new DoubleAnimationUsingKeyFrames();
-            Storyboard.SetTarget(animation, PART_TranslateTransform);
-            Storyboard.SetTargetProperty(animation, new PropertyPath(TranslateTransform.YProperty));
+
+            animation.KeyFrames.Add(new EasingDoubleKeyFrame(0, KeyTime.FromTimeSpan(TimeSpan.Zero))
+            {
+                EasingFunction = new BackEase { EasingMode = EasingMode.EaseInOut }
+            });
 
             // 1초 후: 위로 이동 (Y = -50)
             animation.KeyFrames.Add(new EasingDoubleKeyFrame(-5, KeyTime.FromTimeSpan(Duration))
@@ -123,7 +126,11 @@ namespace MagicConch.Themes.Units
             });
 
             var storyboard = new Storyboard();
+
             storyboard.RepeatBehavior = RepeatBehavior.Forever;
+
+            Storyboard.SetTarget(animation, PART_TranslateTransform);
+            Storyboard.SetTargetProperty(animation, new PropertyPath(TranslateTransform.YProperty));
 
             storyboard.Children.Add(animation);
 
