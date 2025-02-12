@@ -12,23 +12,27 @@
             FontSize="18"
             Text="Magic conch" />
 
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
             <support:UnderLineButton
-                VerticalAlignment="Top"
                 Background="Transparent"
                 FontFamily="{StaticResource GothamLight}"
-                FontSize="18"/>
-            <!--StartDelay="400"
-                Text="Coded"
-                Duration="0:0:0.6"-->
+                FontSize="18"
+                Content="Coded" />
+            <!--
+                StartDelay="400"
+                
+                Duration="0:0:0.6"
+            -->
             <support:UnderLineButton
                 Margin="20,0,0,0"
-                VerticalAlignment="Top"
                 FontFamily="{StaticResource GothamLight}"
-                FontSize="18"/>
-            <!--StartDelay="400"
-                Text="Design"
-                Duration="0:0:0.6"--> 
+                FontSize="18"
+                Content="Design" />
+            <!--
+                StartDelay="400"
+                
+                Duration="0:0:0.6"
+            -->
         </StackPanel>
     </Grid>
 </UserControl>

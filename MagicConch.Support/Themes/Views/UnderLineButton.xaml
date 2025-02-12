@@ -9,7 +9,6 @@
     <Style TargetType="units:UnderLineButton">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="BorderBrush" Value="Black" />
         <Setter Property="BorderThickness" Value="1" />
@@ -30,37 +29,6 @@
                                 <TranslateTransform x:Name="underlineTransform" />
                             </Border.RenderTransform>
                         </Border>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="underlineTransform"
-                                            Storyboard.TargetProperty="X"
-                                            To="{Binding RelativeSource={RelativeSource AncestorType=units:UnderLineButton}, Path=ActualWidth}"
-                                            Duration="0:0:0.5">
-                                            <DoubleAnimation.EasingFunction>
-                                                <SineEase EasingMode="EaseOut" />
-                                            </DoubleAnimation.EasingFunction>
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="MouseOver">
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetName="underlineTransform"
-                                            Storyboard.TargetProperty="X"
-                                            From="{Binding RelativeSource={RelativeSource AncestorType=units:UnderLineButton}, Path=ActualWidth, Converter={StaticResource NegativeValueConverter}}"
-                                            To="0"
-                                            Duration="0:0:0.5">
-                                            <DoubleAnimation.EasingFunction>
-                                                <SineEase EasingMode="EaseOut" />
-                                            </DoubleAnimation.EasingFunction>
-                                        </DoubleAnimation>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
                     </StackPanel>
 
                 </ControlTemplate>
