@@ -25,24 +25,18 @@
                     VerticalAlignment="Center"
                     Source="/MagicConch;component/Assets/Images/Conch_Glow.png" />
 
-                <StackPanel Grid.Row="1" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
+                <StackPanel Grid.Row="1" Margin="0,-15,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
                     <support:SequentialRevealTextBlock
-                        Grid.Row="1"
-                        Height="255" 
                         Margin="0,0,0,0"
-                        VerticalContentAlignment="Bottom" VerticalAlignment="Top"
                         Delay="100"
                         FontFamily="{StaticResource BASKVILL}"
-                        FontSize="250" Background="Blue"
+                        FontSize="250"
                         StartDelay="300"
                         Text="MAGIC "
                         Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
                         Duration="0:0:1.8" />
                     <support:SequentialRevealTextBlock
-                        Grid.Row="1"
-                        Height="255"
                         Margin="0,0,0,0"
-                        VerticalAlignment="Top"
                         Delay="75"
                         FontFamily="{StaticResource BASKVILL}"
                         FontSize="250"
