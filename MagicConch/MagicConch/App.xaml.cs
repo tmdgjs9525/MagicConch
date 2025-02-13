@@ -8,7 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace MagicConch
 {
@@ -20,7 +22,16 @@ namespace MagicConch
         {
             this.InitializeComponent();
 
+            Startup += OnStartup;
+
             //kernel = semanticKernelBuild();
+
+          
+        }
+
+        private async void OnStartup(object sender, StartupEventArgs e)
+        {
+            await LoadFonts();
 
             IServiceProvider provider = serviceInitialize();
 
@@ -55,7 +66,7 @@ namespace MagicConch
             return kernel;
         }
 
-        public IServiceProvider ConfigureService(IServiceCollection services)
+        private IServiceProvider ConfigureService(IServiceCollection services)
         {
             services.AddSingleton<MainPage>();
             services.AddSingleton<MainPageViewModel>();
@@ -73,6 +84,24 @@ namespace MagicConch
             }
 
             return services.BuildServiceProvider();
+        }
+
+
+        private async Task LoadFonts()
+        {
+            await FontFamily.LoadFontAsync("/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face");
+            await FontFamily.LoadFontAsync("/MagicConch;component/Assets/Fonts/GothamLight.ttf#Gotham");
+            await FontFamily.LoadFontAsync("/MagicConch;component/Assets/Fonts/GothamBook.ttf#Gotham");
+
+
+            var customFont = new FontFamily("/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face");
+            Application.Current.Resources["BASKVILL"] = customFont;
+
+            var customFont2 = new FontFamily("/MagicConch;component/Assets/Fonts/GothamLight.ttf#Gotham");
+            Application.Current.Resources["GothamLight"] = customFont;
+
+            var customFont3 = new FontFamily("/MagicConch;component/Assets/Fonts/GothamBook.ttf#Gotham");
+            Application.Current.Resources["GothamBook"] = customFont;
         }
     }
 

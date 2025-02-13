@@ -11,7 +11,6 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <TextBlock
-                VerticalAlignment="Center"
                 CharacterSpacing="-40"
                 FontFamily="{StaticResource GothamBook}"
                 FontSize="24"
@@ -36,10 +35,7 @@
                 Text="{Binding CountryName}" />
         </StackPanel>
 
-        <StackPanel
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
             <support:UnderLineButton
                 Background="Transparent"
                 CharacterSpacing="-40"
@@ -55,12 +51,9 @@
                 FontSize="24" />
         </StackPanel>
 
-        <StackPanel
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <units:Equalizer
-                VerticalAlignment="Bottom"
+                VerticalAlignment="Top"
                 BarCount="4"
                 BarMargin="4,0,0,0"
                 BarWidth="5" />
