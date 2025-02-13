@@ -17,7 +17,7 @@ namespace MagicConch.Themes.Units
         private Point offset;  
         private bool isPressed = false;
 
-        private Line line;
+        private Line line = null!;
         static DragableConch()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DragableConch), new FrameworkPropertyMetadata(typeof(DragableConch)));

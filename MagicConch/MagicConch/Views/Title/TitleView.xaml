@@ -53,7 +53,6 @@
 
                 </StackPanel>
 
-
                 <Grid
                     Grid.Row="0"
                     Grid.RowSpan="4"
@@ -72,29 +71,7 @@
                         Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
                 </Grid>
 
-                <Button
-                    Grid.Row="2"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
-                    VerticalContentAlignment="Bottom"
-                    Background="Transparent">
-                    <Button.Content>
-                        <Image
-                            Width="200"
-                            Height="200"
-                            IsHitTestVisible="False"
-                            Source="/MagicConch;component/Assets/Images/AlarmClock.png" />
-                    </Button.Content>
-                </Button>
-
-                <TextBlock
-                    Grid.Row="2"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
-                    CharacterSpacing="-40"
-                    FontFamily="{StaticResource GothamBook}"
-                    FontSize="24"
-                    Text="Ask the magic conch anything and follow that answer, Luck will be with you in any form" />
+                <local:Footer Grid.Row="2"/>
             </Grid>
 
 

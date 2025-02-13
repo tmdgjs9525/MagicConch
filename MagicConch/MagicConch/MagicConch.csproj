@@ -31,6 +31,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\Equalizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Views\FloattingBubble.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -41,6 +45,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Title\Footer.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Title\Header.xaml">
@@ -65,6 +72,9 @@
     <Compile Include="Themes\Units\DragableConch.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Themes\Units\Equalizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Themes\Units\FloattingBubble.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -74,6 +84,7 @@
     <Compile Include="Views\Conch\ConchView.xaml.cs" />
     <Compile Include="Views\MainPage.xaml.cs" />
     <Compile Include="Views\MainView.xaml.cs" />
+    <Compile Include="Views\Title\Footer.xaml.cs" />
     <Compile Include="Views\Title\Header.xaml.cs" />
     <Compile Include="Views\Title\TitleView.xaml.cs" />
   </ItemGroup>
