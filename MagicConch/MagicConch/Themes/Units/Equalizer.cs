@@ -94,7 +94,10 @@ namespace MagicConch.Themes.Units
 
         private void Animation(Border border)
         {
-            TimeSpan Duration = TimeSpan.FromMilliseconds(random.NextDouble() * 400 + 200);
+            int maximumDuration = 400;
+            int minimumDuration = 200;
+
+            TimeSpan Duration = TimeSpan.FromMilliseconds(random.NextDouble() * maximumDuration + minimumDuration);
 
             Storyboard storyboard = new Storyboard();
             DoubleAnimationUsingKeyFrames doubleAnimation = new DoubleAnimationUsingKeyFrames();
