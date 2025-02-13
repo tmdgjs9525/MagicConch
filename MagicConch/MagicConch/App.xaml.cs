@@ -17,7 +17,7 @@ namespace MagicConch
         {
             this.InitializeComponent();
 
-            kernel = semanticKernelBuild();
+           // kernel = semanticKernelBuild();
 
             IServiceProvider provider = serviceInitialize();
 
@@ -31,9 +31,9 @@ namespace MagicConch
         {
             ServiceCollection services = new ServiceCollection();
 
-            var ichat = kernel.Services.GetRequiredService<IChatCompletionService>();
+            ///var ichat = kernel.Services.GetRequiredService<IChatCompletionService>();
 
-            services.AddSingleton<IChatCompletionService>(ichat);
+           // services.AddSingleton<IChatCompletionService>(ichat);
 
             IServiceProvider provider = Configure.ConfigureService(services);
 
@@ -49,7 +49,7 @@ namespace MagicConch
 
             var builder = Kernel.CreateBuilder();
 
-            builder.AddOpenAIChatCompletion("", "");
+            //builder.AddOpenAIChatCompletion("", "");
          
             kernel = builder.Build();   
 
