@@ -43,7 +43,7 @@
                         Duration="0:0:1.8" />
                     <support:SequentialRevealTextBlock
                         Margin="0,0,0,0"
-                        Delay="75"
+                        Delay="100"
                         FontFamily="{StaticResource BASKVILL}"
                         FontSize="250"
                         StartDelay="850"
@@ -71,7 +71,7 @@
                         Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
                 </Grid>
 
-                <local:Footer Grid.Row="2"/>
+                <local:Footer Grid.Row="2" />
             </Grid>
 
 

@@ -94,7 +94,7 @@ namespace MagicConch.Themes.Units
 
         private void Animation(Border border)
         {
-            TimeSpan Duration = TimeSpan.FromMilliseconds(random.NextDouble() * 500 + 200);
+            TimeSpan Duration = TimeSpan.FromMilliseconds(random.NextDouble() * 400 + 200);
 
             Storyboard storyboard = new Storyboard();
             DoubleAnimationUsingKeyFrames doubleAnimation = new DoubleAnimationUsingKeyFrames();
@@ -117,7 +117,12 @@ namespace MagicConch.Themes.Units
             Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(Border.HeightProperty));
 
             storyboard.Children.Add(doubleAnimation);
-            storyboard.RepeatBehavior = RepeatBehavior.Forever;
+
+            storyboard.Completed += (s, e) =>
+            {
+                doubleAnimation.KeyFrames[1].Value = random.NextDouble() * Height;
+                storyboard.Begin();
+            };
 
             storyboard.Begin();
         }
