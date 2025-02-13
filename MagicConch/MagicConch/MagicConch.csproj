@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
     <DefineSilverlight>true</DefineSilverlight>
   </PropertyGroup>
@@ -13,6 +13,7 @@
 	
   <ItemGroup>
     <PackageReference Include="Microsoft.SemanticKernel" Version="1.36.0" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="OpenSilver" Version="3.1.2" />
     <PackageReference Include="OpenSilver.Themes.Modern" Version="3.1.*" />
   </ItemGroup>
@@ -69,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions\ViewNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
+    <Compile Include="Helper\SoundHelper.cs" />
     <Compile Include="Themes\Units\DragableConch.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -156,6 +158,7 @@
 
   <ItemGroup>
     <Folder Include="Converter\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
