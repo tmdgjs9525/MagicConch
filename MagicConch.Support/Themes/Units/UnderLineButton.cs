@@ -42,7 +42,7 @@ namespace MagicConch.Support.Themes.Units
         }
 
         private void UnderLineButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-            {
+        {
             var transformAnimation = new DoubleAnimation
             {
                 From = translateTransform.X,
@@ -70,6 +70,7 @@ namespace MagicConch.Support.Themes.Units
 
         private void UnderLineButton_SizeChanged(object sender, RoutedEventArgs e)
         {
+            //하단 border가 컨트롤 바깥까지 보이지 않도록 Clip
             translateTransform.X = -ActualWidth;
 
             var rect = new RectangleGeometry();

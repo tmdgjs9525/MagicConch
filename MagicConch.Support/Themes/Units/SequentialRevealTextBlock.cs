@@ -162,13 +162,5 @@ namespace MagicConch.Support.Themes.Units
 
             storyboard.Begin();
         }
-
-        public void SetHidden()
-        {
-            foreach (var child in stackPanel.Children)
-            {
-                ((TextBlock)child).Opacity = 0;
-            }
-        }
     }
 }

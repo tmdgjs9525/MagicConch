@@ -136,18 +136,18 @@ namespace MagicConch.Support.Themes.Units
         {
             base.OnApplyTemplate();
 
-            translateTransform = GetTemplateChild("underlineTransform") as TranslateTransform;
+            translateTransform = (TranslateTransform)GetTemplateChild("underlineTransform");
+            stackPanel = (StackPanel)GetTemplateChild("stackPanel");
+            underLine = (Border)GetTemplateChild("underline");
 
-            stackPanel = GetTemplateChild("stackPanel") as StackPanel;
-            underLine = GetTemplateChild("underline") as Border;
+            //Text를 한 글자 씩 split
+            var splitText = Text.Select(s => s.ToString()).ToArray();
 
-            var stringList = Text.Select(s => s.ToString()).ToList();
-
-            for (int i = 0; i < stringList.Count; i++)
+            for (int i = 0; i < splitText.Length; i++)
             {
                 var textBlock = new TextBlock
                 {
-                    Text = stringList[i],
+                    Text = splitText[i],
                     FontSize = FontSize,
                     Foreground = Foreground,
                     FontWeight = FontWeight,

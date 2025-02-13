@@ -18,6 +18,9 @@ namespace MagicConch.Themes.Units
         private bool isPressed = false;
 
         private Line line = null!;
+
+        private int leftOffset = 17;
+        private int bottomOffset = -20;
         static DragableConch()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DragableConch), new FrameworkPropertyMetadata(typeof(DragableConch)));
@@ -43,8 +46,8 @@ namespace MagicConch.Themes.Units
 
         private void DragableConch_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            double x = Canvas.GetLeft(Part_Handle) + 17;
-            double y = Canvas.GetTop(Part_Handle) + Part_Handle.ActualHeight -20;
+            double x = Canvas.GetLeft(Part_Handle) + leftOffset;
+            double y = Canvas.GetTop(Part_Handle) + Part_Handle.ActualHeight + bottomOffset;
 
             line = new Line() { X1 = x, Y1 = y, X2 = x, Y2 = y, Stroke = new SolidColorBrush(Colors.Black), StrokeThickness = 2 };
 
@@ -82,8 +85,8 @@ namespace MagicConch.Themes.Units
                 Canvas.SetLeft(Part_Handle, x);
                 Canvas.SetTop(Part_Handle, y);
 
-                line.X2 = x + 10;
-                line.Y2 = y + Part_Handle.ActualHeight - 10;
+                line.X2 = x + leftOffset;
+                line.Y2 = y + Part_Handle.ActualHeight + bottomOffset;
             }
         }
     }

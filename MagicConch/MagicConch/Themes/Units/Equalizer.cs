@@ -63,14 +63,14 @@ namespace MagicConch.Themes.Units
 
             BarMargin = thickness;
 
-            Random random = new Random();
+            Random heightRandom = new Random();
             for (int i = 0; i < BarCount; i++)
             {
                 var border = new Border
                 {
                     VerticalAlignment = VerticalAlignment.Bottom,
                     Width = BarWidth,
-                    Height = random.NextDouble() * Height,
+                    Height = heightRandom.NextDouble() * Height,
                     Background = Background,
                     Margin = i == 0 ? new Thickness(0, 0, 0, bottomMargin) : BarMargin,
                 };
