@@ -13,7 +13,6 @@ namespace MagicConch.Themes.Units
     public partial class FloattingBubble : Control, IAnimation
     {
         private TranslateTransform PART_TranslateTransform = null!;
-        private DispatcherTimer timer = new DispatcherTimer();
 
         public TimeSpan Duration
         {

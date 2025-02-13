@@ -14,13 +14,24 @@ namespace MagicConch.Themes.Units
         private Canvas ConchCanvas = null!;
         private Image Part_Body = null!;
         private Border Part_Handle = null!;
-        private Point offset;  
+       
         private bool isPressed = false;
 
         private Line line = null!;
 
-        private int leftOffset = 17;
-        private int bottomOffset = -20;
+        /// <summary>
+        /// 마우스 클릭 오프셋
+        /// </summary>
+        private Point offset;
+        
+        /// <summary>
+        /// 손잡이 이미지 끝부분 좌표 오프셋
+        /// </summary>
+        private readonly int leftOffset = 17;
+        /// <summary>
+        /// 손잡이 이미지 끝부분 좌표 오프셋
+        /// </summary>
+        private readonly int bottomOffset = -20;
         static DragableConch()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DragableConch), new FrameworkPropertyMetadata(typeof(DragableConch)));
@@ -73,17 +84,12 @@ namespace MagicConch.Themes.Units
             if (isPressed is true)
             {
                 Point point = e.GetPosition(ConchCanvas);
-                //Thickness margin = new Thickness();
-                //margin.Left = point.X - _offset.X;
-                //margin.Top = point.Y - _offset.Y;
-
-                //Part_Handle.Margin = margin;
 
                 double x = point.X - offset.X;
                 double y = point.Y - offset.Y;
 
-                Canvas.SetLeft(Part_Handle, x);
-                Canvas.SetTop(Part_Handle, y);
+                Canvas.SetLeft(Part_Handle, point.X - offset.X);
+                Canvas.SetTop(Part_Handle, point.Y - offset.Y);
 
                 line.X2 = x + leftOffset;
                 line.Y2 = y + Part_Handle.ActualHeight + bottomOffset;
