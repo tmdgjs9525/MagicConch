@@ -7,7 +7,7 @@ using System.Windows.Media.Animation;
 
 namespace MagicConch.Support.EaseFunctions
 {
-    public sealed class CustomEase : EasingFunctionBase
+    public sealed class CustomExponentialEase : EasingFunctionBase
     {
         /// <inheritdoc />
         protected override double EaseInCore(double normalizedTime)
