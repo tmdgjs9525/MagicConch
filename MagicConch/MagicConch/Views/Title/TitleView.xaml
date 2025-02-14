@@ -11,11 +11,11 @@
             <Grid x:Name="grid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="260" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <local:Header x:Name="header" Grid.Row="0" />
+                <local:Header x:Name="header" Grid.Row="0" Margin="50,50,50,0"/>
 
                 <Image
                     Grid.RowSpan="4"
@@ -26,60 +26,51 @@
                     IsHitTestVisible="False"
                     Source="/MagicConch;component/Assets/Images/Conch_Glow.png" />
 
-                <Viewbox
-                    x:Name="viewbox"
+                <StackPanel
                     Grid.Row="1"
-                    Width="1820"
-                    Height="850"
-                    Margin="0,2,0,0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
-                    Stretch="Uniform">
-                    <StackPanel IsHitTestVisible="False" Orientation="Horizontal">
-                        <support:SequentialRevealTextBlock
-                            Height="260"
-                            Margin="0,0,0,0"
-                            Delay="70"
-                            FontFamily="{StaticResource BASKVILL}"
-                            FontSize="250"
-                            StartDelay="300"
-                            Text="MAGIC "
-                            Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
-                            Duration="0:0:1.4" />
-                        <support:SequentialRevealTextBlock
-                            Height="260"
-                            Margin="0,0,0,0"
-                            Delay="70"
-                            FontFamily="{StaticResource BASKVILL}"
-                            FontSize="250"
-                            StartDelay="700"
-                            Text="CONCH"
-                            Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
-                            Duration="0:0:1.4" />
+                    IsHitTestVisible="False" HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <support:SequentialRevealTextBlock
+                        Height="260"
+                        Margin="0,0,0,0"
+                        Delay="70"
+                        FontFamily="{StaticResource BASKVILL}"
+                        FontSize="250"
+                        StartDelay="300"
+                        Text="MAGIC "
+                        Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                        Duration="0:0:1.4" />
+                    <support:SequentialRevealTextBlock
+                        Height="260"
+                        Margin="0,0,0,0"
+                        Delay="70"
+                        FontFamily="{StaticResource BASKVILL}"
+                        FontSize="250"
+                        StartDelay="700"
+                        Text="CONCH"
+                        Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                        Duration="0:0:1.4" />
+                </StackPanel>
 
-                    </StackPanel>
-                </Viewbox>
-
-                <Viewbox
+                <Grid
+                    Grid.Row="0"
                     Grid.RowSpan="4"
-                    Width="580"
-                    Height="580"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Stretch="Uniform">
-                    <Grid IsHitTestVisible="False">
-                        <Image
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
-                        <Image
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
-                    </Grid>
-                </Viewbox>
+                    IsHitTestVisible="False">
+                    <Image
+                        Width="580"
+                        Height="580"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
+                    <Image
+                        Width="580"
+                        Height="580"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
+                </Grid>
 
-                <local:Footer Grid.Row="2" />
+                <local:Footer Grid.Row="2" Margin="50,0,50,50"/>
             </Grid>
         </Border>
     </Grid>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -14,9 +15,12 @@ namespace MagicConch.Views
 {
     public partial class MainView : UserControl
     {
+
         public MainView()
         {
             this.InitializeComponent();
+
         }
+
     }
 }
