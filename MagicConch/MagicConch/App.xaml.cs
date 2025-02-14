@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using MagicConch.Core;
+using MagicConch.Helper;
 using MagicConch.ViewModels;
 using MagicConch.Views;
 using MagicConch.Views.Conch;
@@ -89,24 +90,9 @@ namespace MagicConch
 
         private async Task LoadFonts()
         {
-            await FontFamily.LoadFontAsync("/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face");
-            await FontFamily.LoadFontAsync("/MagicConch;component/Assets/Fonts/GothamLight.ttf#Gotham");
-            await FontFamily.LoadFontAsync("/MagicConch;component/Assets/Fonts/GothamBook.ttf#Gotham");
-
-
-            var customFont = new FontFamily("/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face");
-            Application.Current.Resources["BASKVILL"] = customFont;
-
-            var customFont2 = new FontFamily("/MagicConch;component/Assets/Fonts/GothamLight.ttf#Gotham");
-            Application.Current.Resources["GothamLight"] = customFont;
-
-            var customFont3 = new FontFamily("/MagicConch;component/Assets/Fonts/GothamBook.ttf#Gotham");
-            Application.Current.Resources["GothamBook"] = customFont;
+            await LoadFontHelper.LoadFont("/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face", "BASKVILL");
+            await LoadFontHelper.LoadFont("/MagicConch;component/Assets/Fonts/GothamLight.ttf#Gotham", "GothamLight");
+            await LoadFontHelper.LoadFont("/MagicConch;component/Assets/Fonts/GothamBook.ttf#Gotham", "GothamBook");
         }
-    }
-
-    internal static class Configure
-    {
-        
     }
 }
