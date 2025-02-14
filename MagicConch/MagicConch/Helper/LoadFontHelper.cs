@@ -20,8 +20,8 @@ namespace MagicConch.Helper
         {
             await FontFamily.LoadFontAsync(fontPath);
 
-            var customFont = new FontFamily(fontPath);
-            Application.Current.Resources[fontName] = customFont;
+            var font = new FontFamily(fontPath);
+            Application.Current.Resources[fontName] = font;
         }
     }
 }

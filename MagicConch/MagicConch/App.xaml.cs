@@ -87,7 +87,8 @@ namespace MagicConch
             return services.BuildServiceProvider();
         }
 
-
+        //App.xaml 리소스에 폰트를 등록하게 되면 페이지 로드후에 폰트가 적용되기 때문에 
+        //미리 폰트를 로드합니다.
         private async Task LoadFonts()
         {
             await LoadFontHelper.LoadFont("/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face", "BASKVILL");
