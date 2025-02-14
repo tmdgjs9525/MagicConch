@@ -12,6 +12,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using ServiceProvider = Microsoft.Extensions.DependencyInjection.ServiceProvider;
 
 namespace MagicConch
 {
@@ -23,16 +24,16 @@ namespace MagicConch
         {
             this.InitializeComponent();
 
-            Startup += OnStartup;
+            Startup += onStartup;
 
             //kernel = semanticKernelBuild();
 
           
         }
 
-        private async void OnStartup(object sender, StartupEventArgs e)
+        private async void onStartup(object sender, StartupEventArgs e)
         {
-            await LoadFonts();
+            await loadFonts();
 
             IServiceProvider provider = serviceInitialize();
 
@@ -46,7 +47,7 @@ namespace MagicConch
         {
             ServiceCollection services = new ServiceCollection();
 
-            IServiceProvider provider = ConfigureService(services);
+            IServiceProvider provider = configureService(services);
 
             Ioc.Default.ConfigureServices(provider);
 
@@ -67,7 +68,7 @@ namespace MagicConch
             return kernel;
         }
 
-        private IServiceProvider ConfigureService(IServiceCollection services)
+        private ServiceProvider configureService(IServiceCollection services)
         {
             services.AddSingleton<MainPage>();
             services.AddSingleton<MainPageViewModel>();
@@ -89,7 +90,7 @@ namespace MagicConch
 
         //App.xaml 리소스에 폰트를 등록하게 되면 페이지 로드후에 폰트가 적용되기 때문에 
         //미리 폰트를 로드합니다.
-        private async Task LoadFonts()
+        private static async Task loadFonts()
         {
             await LoadFontHelper.LoadFont("/MagicConch;component/Assets/Fonts/BASKVILL.ttf#Baskerville Old Face", "BASKVILL");
             await LoadFontHelper.LoadFont("/MagicConch;component/Assets/Fonts/GothamLight.ttf#Gotham", "GothamLight");
