@@ -36,8 +36,8 @@ namespace MagicConch.Views
 
             CountryName = CountryHelper.GetCurrentCountryNameInEnglish();
 
-            RefreshTimeZoneInfo();
-            StartTimeZoneMonitor();
+            refreshTimeZoneInfo();
+            startTimeZoneMonitor();
         }
 
         #region Commands
@@ -53,15 +53,15 @@ namespace MagicConch.Views
         }
         #endregion
 
-        public void StartTimeZoneMonitor()
+        private void startTimeZoneMonitor()
         {
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromMinutes(1); // 1분마다 체크
-            _timer.Tick += RefreshTimeZoneInfo;
+            _timer.Tick += refreshTimeZoneInfo;
             _timer.Start();
         }
 
-        private void RefreshTimeZoneInfo(object? s = null, EventArgs? e = null)
+        private void refreshTimeZoneInfo(object? s = null, EventArgs? e = null)
         {
             TimeZoneInfo localTimeZone = TimeZoneInfo.Local;
 

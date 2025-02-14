@@ -27,11 +27,11 @@ namespace MagicConch.Themes.Units
         /// <summary>
         /// 손잡이 이미지 끝부분 좌표 오프셋
         /// </summary>
-        private readonly int leftOffset = 17;
+        private readonly int leftOffset = 3;
         /// <summary>
         /// 손잡이 이미지 끝부분 좌표 오프셋
         /// </summary>
-        private readonly int bottomOffset = -20;
+        private readonly int bottomOffset = -17;
         static DragableConch()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DragableConch), new FrameworkPropertyMetadata(typeof(DragableConch)));
@@ -50,6 +50,9 @@ namespace MagicConch.Themes.Units
             Part_Handle.MouseMove += Part_Handle_MouseMove;
 
             Canvas.SetZIndex(Part_Body, 0);
+
+            Canvas.SetTop(Part_Handle, 186);
+            Canvas.SetLeft(Part_Handle, 558);
             Canvas.SetZIndex(Part_Handle, 2);
 
             SizeChanged += DragableConch_SizeChanged;

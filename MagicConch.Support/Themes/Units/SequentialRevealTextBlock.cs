@@ -121,26 +121,26 @@ namespace MagicConch.Support.Themes.Units
         {
             await Task.Delay(StartDelay);
 
-            timer.Tick += SequentialAnimation;
+            timer.Tick += sequentialAnimation;
             timer.Interval = TimeSpan.FromMilliseconds(Delay);
             timer.Start();
         }
 
-        private void SequentialAnimation(object sender, EventArgs e)
+        private void sequentialAnimation(object sender, EventArgs e)
         {
             var textblock = stackPanel.Children[currentIndex++] as TextBlock;
             textblock.Opacity = 1;
-            AnimateText(textblock);
+            animateText(textblock);
 
             if (currentIndex >= stackPanel.Children.Count)
             {
-                timer.Tick -= SequentialAnimation;
+                timer.Tick -= sequentialAnimation;
                 timer.Stop();
                 currentIndex = 0;
             }
         }
 
-        private void AnimateText(FrameworkElement element)
+        private void animateText(FrameworkElement element)
         {
             var transform = new TranslateTransform { Y = Offset };
             element.RenderTransform = transform;
@@ -151,7 +151,7 @@ namespace MagicConch.Support.Themes.Units
                 To = 0,
                 Duration = Duration,
                 BeginTime = TimeSpan.FromMilliseconds(0),
-                EasingFunction = new CustomEase { EasingMode = EasingMode.EaseOut}
+                EasingFunction = new CustomExponentialEase { EasingMode = EasingMode.EaseOut}
             };
 
             Storyboard.SetTarget(transformAnimation, transform);

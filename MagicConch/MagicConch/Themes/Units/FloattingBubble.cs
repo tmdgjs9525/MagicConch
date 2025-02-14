@@ -95,10 +95,10 @@ namespace MagicConch.Themes.Units
         {
             await Task.Delay(StartDelay);
 
-            Animation();
+            animation();
         }
 
-        private void Animation()
+        private void animation()
         {
             if (PART_TranslateTransform is null)
             {

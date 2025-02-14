@@ -87,17 +87,14 @@ namespace MagicConch.Themes.Units
             {
                 if (item is Border border)
                 {
-                    Animation(border);
+                    animation(border);
                 }
             }
         }
 
-        private void Animation(Border border)
+        private void animation(Border border)
         {
-            int maximumDuration = 400;
-            int minimumDuration = 200;
-
-            TimeSpan Duration = TimeSpan.FromMilliseconds(random.NextDouble() * maximumDuration + minimumDuration);
+            TimeSpan Duration = getRandomTimespan();
 
             Storyboard storyboard = new Storyboard();
             DoubleAnimationUsingKeyFrames doubleAnimation = new DoubleAnimationUsingKeyFrames();
@@ -123,11 +120,25 @@ namespace MagicConch.Themes.Units
 
             storyboard.Completed += (s, e) =>
             {
+                Duration = getRandomTimespan();
+
+                doubleAnimation.KeyFrames[1].KeyTime = Duration;
                 doubleAnimation.KeyFrames[1].Value = random.NextDouble() * Height;
+
+                doubleAnimation.KeyFrames[2].KeyTime = Duration.Add(Duration);
+
                 storyboard.Begin();
             };
 
             storyboard.Begin();
+        }
+
+        private TimeSpan getRandomTimespan()
+        {
+            int maximumDuration = 400;
+            int minimumDuration = 300;
+
+            return TimeSpan.FromMilliseconds((random.NextDouble() * maximumDuration) + minimumDuration);
         }
     }
 }

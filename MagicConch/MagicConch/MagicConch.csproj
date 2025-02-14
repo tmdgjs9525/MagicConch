@@ -28,6 +28,10 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Views\AlarmClock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Views\DragableConch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +75,9 @@
     <Compile Include="Regions\ViewNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
     <Compile Include="Helper\SoundHelper.cs" />
+    <Compile Include="Themes\Units\AlarmClock.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Themes\Units\DragableConch.cs">
       <SubType>Code</SubType>
     </Compile>

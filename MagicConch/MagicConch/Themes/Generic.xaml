@@ -6,5 +6,6 @@
         <ResourceDictionary Source="/MagicConch;component/Themes/Views/FloattingBubble.xaml" />
         <ResourceDictionary Source="/MagicConch;component/Themes/Views/DragableConch.xaml" />
         <ResourceDictionary Source="/MagicConch;component/Themes/Views/Equalizer.xaml" />
+        <ResourceDictionary Source="/MagicConch;component/Themes/Views/AlarmClock.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

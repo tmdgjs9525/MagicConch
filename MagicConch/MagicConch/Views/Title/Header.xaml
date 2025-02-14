@@ -55,7 +55,7 @@
             <units:Equalizer
                 VerticalAlignment="Top"
                 BarCount="4"
-                BarMargin="4,0,0,0"
+                BarMargin="3,0,0,0"
                 BarWidth="5" />
             <TextBlock
                 Margin="3,0,0,0"

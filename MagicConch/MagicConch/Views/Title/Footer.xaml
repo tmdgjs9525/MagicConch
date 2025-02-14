@@ -2,22 +2,11 @@
     x:Class="MagicConch.Views.Title.Footer"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:MagicConch.Views.Title">
+    xmlns:local="clr-namespace:MagicConch.Views.Title"
+    xmlns:units="clr-namespace:MagicConch.Themes.Units">
 
     <Grid>
-        <Button
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"
-            VerticalContentAlignment="Bottom"
-            Background="Transparent">
-            <Button.Content>
-                <Image
-                    Width="200"
-                    Height="200"
-                    IsHitTestVisible="False"
-                    Source="/MagicConch;component/Assets/Images/AlarmClock.png" />
-            </Button.Content>
-        </Button>
+        <units:AlarmClock Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 
         <TextBlock
             HorizontalAlignment="Center"
