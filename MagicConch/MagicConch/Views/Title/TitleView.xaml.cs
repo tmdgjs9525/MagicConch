@@ -25,21 +25,22 @@ namespace MagicConch.Views.Title
 
             FindAllAnimationTextBlock(grid);
             FindAllAnimationTextBlock(header);
+            //FindAllAnimationTextBlock(viewbox.Child);
 
             FindLogicalChild(header);
 
-            Random random = new Random();
-            for (int i = 0; i < 10; i++)
-            {
-                var bubble = new FloattingBubble();
-                bubble.Duration = TimeSpan.FromMilliseconds(2000);
-                bubble.StartDelay = random.Next() % 2000;
-                Canvas.SetLeft(bubble, random.NextDouble() * 1920);
-                Canvas.SetTop(bubble, random.NextDouble() * 1080);
-                BubbleCanvas.Children.Add(bubble);
-            }
+            //Random random = new Random();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    var bubble = new FloattingBubble();
+            //    bubble.Duration = TimeSpan.FromMilliseconds(2000);
+            //    bubble.StartDelay = random.Next() % 2000;
+            //    Canvas.SetLeft(bubble, random.NextDouble() * 1920);
+            //    Canvas.SetTop(bubble, random.NextDouble() * 1080);
+            //    BubbleCanvas.Children.Add(bubble);
+            //}
 
-            animationControls.AddRange(BubbleCanvas.Children.OfType<IAnimation>());
+            //animationControls.AddRange(BubbleCanvas.Children.OfType<IAnimation>());
             Loaded += TitleView_Loaded;
         }
 

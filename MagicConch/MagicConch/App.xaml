@@ -15,10 +15,7 @@
 
             <cnvtrs:AddDoubleValueConverter x:Key="AddDoubleValueConverter" />
 
-            <Style TargetType="TransitioningContentControl">
-                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                <Setter Property="VerticalContentAlignment" Value="Stretch" />
-            </Style>
+           
             <Style TargetType="ContentControl">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                 <Setter Property="VerticalContentAlignment" Value="Stretch" />

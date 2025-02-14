@@ -7,9 +7,19 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="units:AlarmClock">
-                    <Viewbox HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" x:Name="PART_AlarmClockViewBox" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Stretch="Fill">
-                        <Image Source="/MagicConch;component/Assets/Images/AlarmClock.png" />
-                    </Viewbox>
+                    <Grid>
+                        <Viewbox
+                            x:Name="PART_AlarmClockViewBox"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            HorizontalAlignment="Center"
+                            RenderTransformOrigin="0.5,0.5"
+                            Stretch="Fill">
+                            <Image Source="/MagicConch;component/Assets/Images/AlarmClock.png" />
+                        </Viewbox>
+                        <MediaElement Volume="0" AutoPlay="False" x:Name="PART_MediaElement"/>
+                    </Grid>
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

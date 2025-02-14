@@ -1,4 +1,5 @@
-﻿using MagicConch.Support.EaseFunctions;
+﻿using MagicConch.Helper;
+using MagicConch.Support.EaseFunctions;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,6 +16,7 @@ namespace MagicConch.Themes.Units
         private Viewbox PART_AlarmClockViewBox = null!;
         private Storyboard shirnkStoryboard = new Storyboard();
         private Storyboard expandStoryboard = new Storyboard();
+        private MediaElement PART_MediaElement = null!;
 
         public TimeSpan Duration
         {
@@ -40,6 +42,11 @@ namespace MagicConch.Themes.Units
             SizeChanged += AlarmClock_SizeChanged;
 
             PART_AlarmClockViewBox = (Viewbox)GetTemplateChild("PART_AlarmClockViewBox");
+            PART_MediaElement = (MediaElement)GetTemplateChild("PART_MediaElement");
+
+            PART_MediaElement.Volume = 1;
+            var a= new Uri($"{AppDomain.CurrentDomain.BaseDirectory}Assets\\Sounds\\spongebob-boat-horn.mp3", UriKind.Relative);
+            PART_MediaElement.Source = a;
 
             Click += AlarmClock_Click;
         }
@@ -85,6 +92,7 @@ namespace MagicConch.Themes.Units
             shirnkStoryboard.Completed += (s, e) =>
             {
                 expandStoryboard.Begin();
+                PART_MediaElement.Play();
             };
         }
 

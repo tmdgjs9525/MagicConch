@@ -8,6 +8,7 @@ using MagicConch.Regions;
 using Microsoft.SemanticKernel.ChatCompletion;
 using System;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Threading;
@@ -70,7 +71,10 @@ namespace MagicConch.Views
 
             string timeZoneAbbreviation = TimeZoneInfoHelper.GetTimeZoneAbbreviation(localTimeZone);
 
-            CurrentTime = $"{localTime:hh:mm tt}, {timeZoneAbbreviation}";
+            CultureInfo enUS = new CultureInfo("en-US");
+            string time = localTime.ToString("hh:mm tt", enUS) + $", {timeZoneAbbreviation}";
+
+            CurrentTime = time;
         }
     }
 }

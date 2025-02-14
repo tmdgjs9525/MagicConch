@@ -9,59 +9,59 @@
     xmlns:units="clr-namespace:MagicConch.Themes.Units">
     <UserControl.Resources />
     <Grid>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel
+            HorizontalAlignment="Left" VerticalAlignment="Center"
+            Orientation="Horizontal">
             <TextBlock
                 CharacterSpacing="-40"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="24"
+                FontSize="20"
                 Text="{Binding CurrentTime}" />
 
             <TextBlock
-                Margin="5,0,0,0"
-                VerticalAlignment="Center"
+                Margin="7,-2,0,0" VerticalAlignment="Center"
                 FontSize="12"
                 Text="●">
                 <i:Interaction.Behaviors>
-                    <behavior:BlinkBehavior Duration="0:0:1" />
+                    <behavior:BlinkBehavior Duration="0:0:0.8" />
                 </i:Interaction.Behaviors>
             </TextBlock>
 
             <TextBlock
-                Margin="5,0,0,0"
-                VerticalAlignment="Center"
+                Margin="7,0,0,0"
                 CharacterSpacing="-40"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="24"
+                FontSize="20"
                 Text="{Binding CountryName}" />
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
             <support:UnderLineButton
                 Background="Transparent"
                 CharacterSpacing="-40"
                 Content="Coded"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="24" />
+                FontSize="20" />
 
             <support:UnderLineButton
                 Margin="20,0,0,0"
                 CharacterSpacing="-40"
                 Content="Design"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="24" />
+                FontSize="20" />
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
             <units:Equalizer
-                VerticalAlignment="Top"
-                BarCount="4"
+                Height="15"
+                BarCount="6"
                 BarMargin="3,0,0,0"
-                BarWidth="5" />
+                BarWidth="2" />
             <TextBlock
-                Margin="3,0,0,0"
+                Margin="13,0,0,0"
                 CharacterSpacing="-40"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="24"
+                FontSize="20"
                 Text="Sound : ON" />
         </StackPanel>
 

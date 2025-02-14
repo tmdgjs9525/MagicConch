@@ -13,7 +13,7 @@
             VerticalAlignment="Bottom"
             CharacterSpacing="-40"
             FontFamily="{StaticResource GothamBook}"
-            FontSize="24"
+            FontSize="20"
             Text="Ask the magic conch anything and follow that answer, Luck will be with you in any form" />
     </Grid>
 </UserControl>
