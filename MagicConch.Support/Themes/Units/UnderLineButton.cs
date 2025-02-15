@@ -9,6 +9,9 @@ namespace MagicConch.Support.Themes.Units
     public partial class UnderLineButton : Button
     {
         private TranslateTransform translateTransform;
+        private Storyboard mouseEnterStoryboard;
+        private Storyboard mouseLeaveStoryboard;
+
         static UnderLineButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(UnderLineButton), new FrameworkPropertyMetadata(typeof(UnderLineButton)));
@@ -23,7 +26,26 @@ namespace MagicConch.Support.Themes.Units
 
         private void UnderLineButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            var transformAnimation = new DoubleAnimation
+            mouseEnterStoryboard.Begin();
+        }
+
+        private void UnderLineButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            mouseLeaveStoryboard.Begin();
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            translateTransform = GetTemplateChild("underlineTransform") as TranslateTransform;
+        }
+
+
+        private void setStoryboards()
+        {
+            //Mouse Enter
+            var enterAnimation = new DoubleAnimation
             {
                 From = -ActualWidth,
                 To = 0,
@@ -32,40 +54,27 @@ namespace MagicConch.Support.Themes.Units
                 EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
             };
 
-            Storyboard.SetTarget(transformAnimation, translateTransform);
-            Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
+            Storyboard.SetTarget(enterAnimation, translateTransform);
+            Storyboard.SetTargetProperty(enterAnimation, new PropertyPath("X"));
 
-            var storyboard = new Storyboard();
-            storyboard.Children.Add(transformAnimation);
+            mouseEnterStoryboard = new Storyboard();
+            mouseEnterStoryboard.Children.Add(enterAnimation);
 
-            storyboard.Begin();
-        }
-
-        private void UnderLineButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            var transformAnimation = new DoubleAnimation
+            //Mouse Leave
+            var leaveAnimation = new DoubleAnimation
             {
-                From = translateTransform.X,
+                //From = translateTransform.X,
                 To = ActualWidth,
                 Duration = TimeSpan.FromMilliseconds(500),
                 BeginTime = TimeSpan.FromMilliseconds(0),
                 EasingFunction = new SineEase { EasingMode = EasingMode.EaseOut }
             };
 
-            Storyboard.SetTarget(transformAnimation, translateTransform);
-            Storyboard.SetTargetProperty(transformAnimation, new PropertyPath("X"));
+            Storyboard.SetTarget(leaveAnimation, translateTransform);
+            Storyboard.SetTargetProperty(leaveAnimation, new PropertyPath("X"));
 
-            var storyboard = new Storyboard();
-            storyboard.Children.Add(transformAnimation);
-
-            storyboard.Begin();
-        }
-
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-
-            translateTransform = GetTemplateChild("underlineTransform") as TranslateTransform;
+            mouseLeaveStoryboard = new Storyboard();
+            mouseLeaveStoryboard.Children.Add(leaveAnimation);
         }
 
         private void UnderLineButton_SizeChanged(object sender, RoutedEventArgs e)
@@ -76,6 +85,8 @@ namespace MagicConch.Support.Themes.Units
             var rect = new RectangleGeometry();
             rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
             this.Clip = rect;
+
+            setStoryboards();
         }
     }
 }

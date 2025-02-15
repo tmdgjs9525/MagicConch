@@ -10,7 +10,7 @@
     <UserControl.Resources />
     <Grid>
         <StackPanel
-            HorizontalAlignment="Left" VerticalAlignment="Center"
+            HorizontalAlignment="Left"
             Orientation="Horizontal">
             <TextBlock
                 CharacterSpacing="-40"
@@ -35,7 +35,7 @@
                 Text="{Binding CountryName}" />
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
             <support:UnderLineButton
                 Background="Transparent"
                 CharacterSpacing="-40"
@@ -51,9 +51,9 @@
                 FontSize="20" />
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <units:Equalizer
-                Height="15"
+                Height="15" VerticalAlignment="Bottom"
                 BarCount="6"
                 BarMargin="3,0,0,0"
                 BarWidth="2" />
