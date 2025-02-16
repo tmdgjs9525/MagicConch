@@ -3,7 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:units="clr-namespace:MagicConch.Themes.Units">
     <Style TargetType="units:Equalizer">
-        <Setter Property="Height" Value="25"/>
         <Setter Property="Background" Value="Black"/>
         <Setter Property="Template">
             <Setter.Value>

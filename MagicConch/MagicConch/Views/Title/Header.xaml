@@ -23,7 +23,7 @@
                 FontSize="12"
                 Text="●">
                 <i:Interaction.Behaviors>
-                    <behavior:BlinkBehavior Duration="0:0:0.8" />
+                    <behavior:BlinkBehavior Duration="0:0:0.7" />
                 </i:Interaction.Behaviors>
             </TextBlock>
 
@@ -53,9 +53,8 @@
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <units:Equalizer
-                Height="15" VerticalAlignment="Bottom"
-                BarCount="6"
-                BarMargin="3,0,0,0"
+                BarCount="5" Height="15"
+                BarMargin="3,2,0,0"
                 BarWidth="2" />
             <TextBlock
                 Margin="13,0,0,0"
