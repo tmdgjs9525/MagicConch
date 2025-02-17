@@ -6,11 +6,11 @@
     xmlns:units="clr-namespace:MagicConch.Themes.Units">
 
     <Grid>
-        <!--<units:AlarmClock
+        <units:AlarmClock
             Width="200"
             Height="200"
             HorizontalAlignment="Left"
-            VerticalAlignment="Bottom" />-->
+            VerticalAlignment="Bottom" />
 
         <TextBlock
             HorizontalAlignment="Center"

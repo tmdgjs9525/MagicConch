@@ -16,9 +16,10 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <!--<Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/JellyFish.png" />-->
+        <Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/JellyFish.png" />
 
         <Grid Margin="50">
+
             <title:TitleView Background="Transparent" />
         </Grid>
     </Grid>

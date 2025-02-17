@@ -17,7 +17,11 @@
                             Stretch="Fill">
                             <Image Source="/MagicConch;component/Assets/Images/AlarmClock.png" />
                         </Viewbox>
-                        <MediaElement Volume="0" AutoPlay="False" x:Name="PART_MediaElement"/>
+
+                        <MediaElement
+                            x:Name="PART_MediaElement"
+                            AutoPlay="False"
+                            Volume="0" />
                     </Grid>
 
                 </ControlTemplate>
