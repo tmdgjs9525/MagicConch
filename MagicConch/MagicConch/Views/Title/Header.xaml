@@ -7,20 +7,24 @@
     xmlns:local="clr-namespace:MagicConch.Views.Title"
     xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support"
     xmlns:units="clr-namespace:MagicConch.Themes.Units">
-    <UserControl.Resources />
+    <UserControl.Resources>
+        <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource GothamBook}" />
+            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
+        </Style>
+
+    </UserControl.Resources>
     <Grid>
-        <StackPanel
-            HorizontalAlignment="Left"
-            Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
             <TextBlock
                 CharacterSpacing="-40"
-                FontFamily="{StaticResource GothamBook}"
-                FontSize="20"
+                Style="{StaticResource HeaderTextStyle}"
                 Text="{Binding CurrentTime}" />
 
             <TextBlock
-                Margin="7,-2,0,0" VerticalAlignment="Center"
-                FontSize="12"
+                Margin="7,-2,0,0"
+                VerticalAlignment="Center"
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=160}"
                 Text="●">
                 <i:Interaction.Behaviors>
                     <behavior:BlinkBehavior Duration="0:0:0.7" />
@@ -30,8 +34,7 @@
             <TextBlock
                 Margin="7,0,0,0"
                 CharacterSpacing="-40"
-                FontFamily="{StaticResource GothamBook}"
-                FontSize="20"
+                Style="{StaticResource HeaderTextStyle}"
                 Text="{Binding CountryName}" />
         </StackPanel>
 
@@ -41,26 +44,26 @@
                 CharacterSpacing="-40"
                 Content="Coded"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="20" />
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
 
             <support:UnderLineButton
                 Margin="20,0,0,0"
                 CharacterSpacing="-40"
                 Content="Design"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="20" />
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <units:Equalizer
-                BarCount="5" Height="15"
+                Height="15"
+                BarCount="5"
                 BarMargin="3,2,0,0"
                 BarWidth="2" />
             <TextBlock
                 Margin="13,0,0,0"
                 CharacterSpacing="-40"
-                FontFamily="{StaticResource GothamBook}"
-                FontSize="20"
+                Style="{StaticResource HeaderTextStyle}"
                 Text="Sound : ON" />
         </StackPanel>
 

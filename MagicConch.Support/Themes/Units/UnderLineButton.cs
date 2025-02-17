@@ -39,8 +39,21 @@ namespace MagicConch.Support.Themes.Units
             base.OnApplyTemplate();
 
             translateTransform = GetTemplateChild("underlineTransform") as TranslateTransform;
+
+            //SizeChanged += UnderLineButton_SizeChanged;
         }
 
+        private void UnderLineButton_SizeChanged(object sender, RoutedEventArgs e)
+        {
+            //하단 border가 컨트롤 바깥까지 보이지 않도록 Clip
+            translateTransform.X = -ActualWidth;
+
+            var rect = new RectangleGeometry();
+            rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
+            this.Clip = rect;
+
+            setStoryboards();
+        }
 
         private void setStoryboards()
         {
@@ -77,16 +90,6 @@ namespace MagicConch.Support.Themes.Units
             mouseLeaveStoryboard.Children.Add(leaveAnimation);
         }
 
-        private void UnderLineButton_SizeChanged(object sender, RoutedEventArgs e)
-        {
-            //하단 border가 컨트롤 바깥까지 보이지 않도록 Clip
-            translateTransform.X = -ActualWidth;
-
-            var rect = new RectangleGeometry();
-            rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
-            this.Clip = rect;
-
-            setStoryboards();
-        }
+        
     }
 }

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace MagicConch.Supoprt.Converters
+namespace MagicConch.Support.Converters
 {
     internal class NegativeValueConverter : IValueConverter
     {

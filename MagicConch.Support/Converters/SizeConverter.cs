@@ -1,15 +1,10 @@
-﻿using MagicConch.Support.Themes.Units;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace MagicConch.Converter
+namespace MagicConch.Support.Converters
 {
-    internal class FontSizeConverter : IValueConverter
+    public class SizeConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -17,7 +12,6 @@ namespace MagicConch.Converter
 
             if (value is double width && width > 0)
             {
-                Console.WriteLine(width);
                 return width / param; 
             }
             return 16; // 기본값 

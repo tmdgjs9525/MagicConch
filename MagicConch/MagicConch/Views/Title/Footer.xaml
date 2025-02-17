@@ -4,7 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:MagicConch.Views.Title"
     xmlns:units="clr-namespace:MagicConch.Themes.Units">
-
+    <UserControl.Resources>
+        <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="{StaticResource GothamBook}" />
+            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <units:AlarmClock
             Width="200"
@@ -16,8 +21,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             CharacterSpacing="-40"
-            FontFamily="{StaticResource GothamBook}"
-            FontSize="20"
+            Style="{StaticResource HeaderTextStyle}"
             IsHitTestVisible="False"
             Text="Ask the magic conch anything and follow that answer, Luck will be with you in any form." />
     </Grid>

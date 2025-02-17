@@ -58,9 +58,6 @@
     <Page Include="Views\Title\Header.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Title\BodyView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -70,7 +67,6 @@
     </Compile>
     <Compile Include="Behavior\MouseWheelBehavior.cs" />
     <Compile Include="Behavior\ScaleFontBehavior.cs" />
-    <Compile Include="Converter\FontSizeConverter.cs" />
     <Compile Include="Helper\CountryHelper.cs" />
     <Compile Include="Helper\LoadFontHelper.cs" />
     <Compile Include="Helper\TimeZoneInfoHelper.cs" />
@@ -98,7 +94,6 @@
     <Compile Include="Views\MainView.xaml.cs" />
     <Compile Include="Views\Title\Footer.xaml.cs" />
     <Compile Include="Views\Title\Header.xaml.cs" />
-    <Compile Include="Views\Title\BodyView.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -173,6 +168,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Converter\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

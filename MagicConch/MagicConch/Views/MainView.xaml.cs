@@ -23,7 +23,7 @@ namespace MagicConch.Views
         {
             this.InitializeComponent();
 
-            VisualHelper.FindAllAnimationTextBlock(body.Content, animationControls);
+            //VisualHelper.FindAllAnimationTextBlock(body.Content, animationControls);
             VisualHelper.FindAllAnimationTextBlock(header.Content, animationControls);
             VisualHelper.FindAllAnimationTextBlock(this.Content, animationControls);
 

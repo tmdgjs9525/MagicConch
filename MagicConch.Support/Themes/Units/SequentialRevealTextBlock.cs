@@ -129,8 +129,12 @@ namespace MagicConch.Support.Themes.Units
         private void sequentialAnimation(object sender, EventArgs e)
         {
             var textblock = stackPanel.Children[currentIndex++] as TextBlock;
-            textblock.Opacity = 1;
-            animateText(textblock);
+
+            if (string.IsNullOrWhiteSpace(textblock.Text) is false)
+            {
+                textblock.Opacity = 1;
+                animateText(textblock);
+            }
 
             if (currentIndex >= stackPanel.Children.Count)
             {
