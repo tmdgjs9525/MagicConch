@@ -13,9 +13,10 @@ namespace MagicConch.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            double param = double.Parse(parameter.ToString());
             if (value is double width && width > 0)
             {
-                return width / 5.13; // 기준 크기(예: 50배율)
+                return width / param; // 기준 크기(예: 50배율)
             }
             return 16; // 기본값 (웹의 1rem = 16px처럼)
         }

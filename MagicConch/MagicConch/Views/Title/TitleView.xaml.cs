@@ -26,7 +26,7 @@ namespace MagicConch.Views.Title
             FindAllAnimationTextBlock(grid);
             FindAllAnimationTextBlock(header);
 
-//            FindAllAnimationTextBlock(viewbox.Child);
+            //FindAllAnimationTextBlock(viewbox.Child);
 
             FindLogicalChild(header);
 

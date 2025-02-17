@@ -18,11 +18,20 @@
 
         <Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/JellyFish.png" />
 
-        <Viewbox>
-            <Grid Width="1820" Height="980">
-                <title:TitleView />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.026*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.026*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.026*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.026*"/>
+            </Grid.RowDefinitions>
+            
+            <title:TitleView Grid.Row="1" Grid.Column="1"/>
 
-            </Grid>
-        </Viewbox>
+        </Grid>
     </Grid>
 </UserControl>
