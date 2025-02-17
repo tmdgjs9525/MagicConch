@@ -58,7 +58,7 @@
     <Page Include="Views\Title\Header.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Title\TitleView.xaml">
+    <Page Include="Views\Title\BodyView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -98,7 +98,7 @@
     <Compile Include="Views\MainView.xaml.cs" />
     <Compile Include="Views\Title\Footer.xaml.cs" />
     <Compile Include="Views\Title\Header.xaml.cs" />
-    <Compile Include="Views\Title\TitleView.xaml.cs" />
+    <Compile Include="Views\Title\BodyView.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>

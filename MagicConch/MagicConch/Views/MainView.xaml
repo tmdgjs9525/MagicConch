@@ -2,9 +2,13 @@
     x:Class="MagicConch.Views.MainView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cnvtrs="clr-namespace:MagicConch.Converter"
     xmlns:local="clr-namespace:MagicConch.Views"
+    xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support"
     xmlns:title="clr-namespace:MagicConch.Views.Title">
-
+    <UserControl.Resources>
+        <cnvtrs:FontSizeConverter x:Key="FontSizeConverter" />
+    </UserControl.Resources>
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -20,17 +24,82 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.026*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="0.026*"/>
+                <ColumnDefinition Width="0.026*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.026*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.026*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="0.026*"/>
+                <RowDefinition Height="0.0463*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0.0463*" />
             </Grid.RowDefinitions>
-            
-            <title:TitleView Grid.Row="1" Grid.Column="1"/>
+
+            <title:Header
+                x:Name="header"
+                Grid.Row="1"
+                Grid.Column="1" />
+
+            <title:BodyView
+                x:Name="body"
+                Grid.Row="2"
+                Grid.Column="1" />
+
+            <Image
+                Grid.RowSpan="5"
+                Grid.ColumnSpan="5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                IsHitTestVisible="False"
+                Source="/MagicConch;component/Assets/Images/Conch_Glow.png"
+                Stretch="Uniform" />
+
+            <StackPanel
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                IsHitTestVisible="False"
+                Orientation="Horizontal">
+                <support:SequentialRevealTextBlock
+                    Margin="0,0,0,0"
+                    Delay="70"
+                    FontFamily="{StaticResource BASKVILL}"
+                    FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource FontSizeConverter}, ConverterParameter=7.68}"
+                    StartDelay="300"
+                    Text="MAGIC "
+                    Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                    Duration="0:0:1.4" />
+                <support:SequentialRevealTextBlock
+                    Margin="0,0,0,0"
+                    Delay="70"
+                    FontFamily="{StaticResource BASKVILL}"
+                    FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource FontSizeConverter}, ConverterParameter=7.68}"
+                    StartDelay="700"
+                    Text="CONCH"
+                    Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                    Duration="0:0:1.4" />
+            </StackPanel>
+
+            <Grid
+                Grid.Row="0"
+                Grid.RowSpan="5" Grid.ColumnSpan="5"
+                IsHitTestVisible="False">
+                <Image
+                    Width="580"
+                    Height="580"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
+                <Image
+                    Width="580"
+                    Height="580"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
+            </Grid>
+
+            <title:Footer Grid.Row="3" Grid.Column="1" />
 
         </Grid>
     </Grid>
