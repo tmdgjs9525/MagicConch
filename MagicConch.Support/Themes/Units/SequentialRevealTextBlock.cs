@@ -85,10 +85,10 @@ namespace MagicConch.Support.Themes.Units
         private void SequentialRevealTextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             var rect = new RectangleGeometry();
-            rect.Rect = new Rect(0, 0, ActualWidth, Height);
+            rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
             this.Clip = rect;
 
-            var a = stackPanel;
+
         }
 
         public override void OnApplyTemplate()

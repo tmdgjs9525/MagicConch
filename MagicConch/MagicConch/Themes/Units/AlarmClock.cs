@@ -44,9 +44,9 @@ namespace MagicConch.Themes.Units
             PART_AlarmClockViewBox = (Viewbox)GetTemplateChild("PART_AlarmClockViewBox");
             PART_MediaElement = (MediaElement)GetTemplateChild("PART_MediaElement");
 
-            PART_MediaElement.Volume = 1;
-            var a= new Uri($"{AppDomain.CurrentDomain.BaseDirectory}Assets\\Sounds\\spongebob-boat-horn.mp3", UriKind.Relative);
-            PART_MediaElement.Source = a;
+            //PART_MediaElement.Volume = 1;
+            //var a= new Uri($"{AppDomain.CurrentDomain.BaseDirectory}Assets\\Sounds\\spongebob-boat-horn.mp3", UriKind.Relative);
+            //PART_MediaElement.Source = a;
 
             Click += AlarmClock_Click;
         }

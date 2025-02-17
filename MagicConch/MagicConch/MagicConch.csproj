@@ -69,9 +69,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Behavior\MouseWheelBehavior.cs" />
+    <Compile Include="Behavior\ScaleFontBehavior.cs" />
+    <Compile Include="Converter\FontSizeConverter.cs" />
     <Compile Include="Helper\CountryHelper.cs" />
     <Compile Include="Helper\LoadFontHelper.cs" />
     <Compile Include="Helper\TimeZoneInfoHelper.cs" />
+    <Compile Include="Helper\VisualHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions\ViewNames.cs" />
     <Compile Include="Regions\RegionNames.cs" />
@@ -170,7 +173,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Converter\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

@@ -18,9 +18,11 @@
 
         <Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/JellyFish.png" />
 
-        <Grid Margin="50">
+        <Viewbox>
+            <Grid Width="1820" Height="980">
+                <title:TitleView />
 
-            <title:TitleView Background="Transparent" />
-        </Grid>
+            </Grid>
+        </Viewbox>
     </Grid>
 </UserControl>

@@ -15,7 +15,10 @@
 
             <cnvtrs:AddDoubleValueConverter x:Key="AddDoubleValueConverter" />
 
-           
+            <Style TargetType="TextBlock">
+                <Setter Property="IsHitTestVisible" Value="False" />
+            </Style>
+
             <Style TargetType="ContentControl">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                 <Setter Property="VerticalContentAlignment" Value="Stretch" />

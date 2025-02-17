@@ -18,8 +18,7 @@
     <Grid Background="{DynamicResource Theme_BackgroundBrush}">
 
         <TransitioningContentControl
-            HorizontalContentAlignment="Stretch"
-            VerticalContentAlignment="Stretch"
+           
             RegionManager:RegionManager.RegionName="MainRegion" />
         
     </Grid>
