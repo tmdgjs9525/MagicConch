@@ -97,6 +97,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Images\JellyFish_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Assets\Sounds\spongebob-boat-horn.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

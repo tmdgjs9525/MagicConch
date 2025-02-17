@@ -17,7 +17,17 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <!--<Image IsHitTestVisible="False" Source="/MagicConch;component/Assets/Images/JellyFish.png" />-->
+        <!--
+            Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=1}"
+            Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=0.96}"
+        -->
+        <!--<Image
+            IsHitTestVisible="False"
+            Source="/MagicConch;component/Assets/Images/JellyFish.png" >
+            <Image.RenderTransform >
+                <ScaleTransform ScaleX="1.005" ScaleY="1.005"></ScaleTransform>
+            </Image.RenderTransform>
+        </Image>-->
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -26,11 +36,11 @@
                 <ColumnDefinition Width="0.026*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.0463*" />
+                <RowDefinition Height="0.066*" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="0.0463*" />
+                <RowDefinition Height="0.066*" />
             </Grid.RowDefinitions>
 
             <title:Header
@@ -50,7 +60,7 @@
             <support:SequentialRevealTextBlock
                 Grid.Row="2"
                 Grid.Column="1"
-                Margin="0,0,0,0"
+                Margin="0,-19,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 Delay="70"
@@ -59,6 +69,7 @@
                 IsHitTestVisible="False"
                 StartDelay="300"
                 Text="MAGIC CONCH"
+                TextSpacing="-40"
                 Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
                 Duration="0:0:1.4" />
 
@@ -80,6 +91,18 @@
                     VerticalAlignment="Center"
                     Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
             </Grid>
+
+            <Canvas Grid.RowSpan="5" Grid.ColumnSpan="5">
+                <Image
+                    Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=5.8462}"
+                    Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=2.7143}"
+                    Source="/MagicConch;component/Assets/Images/JellyFish_1.png"  RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TranslateTransform X="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=5.78}"
+                                            Y="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=2.194}"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Canvas>
 
             <title:Footer Grid.Row="3" Grid.Column="1" />
 

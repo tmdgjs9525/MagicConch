@@ -30,6 +30,9 @@ namespace MagicConch.Views
 
         [ObservableProperty]
         private string _countryName = string.Empty;
+
+        [ObservableProperty]
+        private bool _isMusicPlaying = false;
         #endregion
         public MainViewModel()
         {
@@ -51,6 +54,12 @@ namespace MagicConch.Views
             chatHistory.AddUserMessage("넌 누구야");
 
             var result = await _chatCompletionService.GetChatMessageContentsAsync(chatHistory);
+        }
+
+        [RelayCommand]
+        private void MusicPlay()
+        {
+            IsMusicPlaying = !IsMusicPlaying;
         }
         #endregion
 

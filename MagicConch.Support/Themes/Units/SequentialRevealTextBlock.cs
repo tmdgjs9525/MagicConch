@@ -72,6 +72,20 @@ namespace MagicConch.Support.Themes.Units
         public static readonly DependencyProperty OffsetProperty =
             DependencyProperty.Register("Offset", typeof(int), typeof(SequentialRevealTextBlock), new PropertyMetadata(30));
 
+
+
+        public double TextSpacing
+        {
+            get { return (double)GetValue(TextSpacingProperty); }
+            set { SetValue(TextSpacingProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for TextMargin.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TextSpacingProperty =
+            DependencyProperty.Register("TextSpacing", typeof(double), typeof(SequentialRevealTextBlock), new PropertyMetadata(0.0));
+
+
+
         static SequentialRevealTextBlock()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SequentialRevealTextBlock), new FrameworkPropertyMetadata(typeof(SequentialRevealTextBlock)));
