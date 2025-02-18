@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Behavior\MouseWheelBehavior.cs" />
     <Compile Include="Behavior\ScaleFontBehavior.cs" />
+    <Compile Include="Converter\BoolToOnOffConverter.cs" />
     <Compile Include="Helper\CountryHelper.cs" />
     <Compile Include="Helper\LoadFontHelper.cs" />
     <Compile Include="Helper\TimeZoneInfoHelper.cs" />
@@ -171,7 +172,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Converter\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
