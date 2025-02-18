@@ -7,22 +7,18 @@
     <UserControl.Resources>
         <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="{StaticResource GothamBook}" />
+            <Setter Property="IsHitTestVisible" Value="False" />
             <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
         </Style>
     </UserControl.Resources>
     <Grid>
-        <units:AlarmClock
-            Width="200"
-            Height="200"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom" />
+        <units:AlarmClock HorizontalAlignment="Left" VerticalAlignment="Bottom" />
 
         <TextBlock
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             CharacterSpacing="-40"
             Style="{StaticResource HeaderTextStyle}"
-            IsHitTestVisible="False"
             Text="Ask the magic conch anything and follow that answer, Luck will be with you in any form." />
     </Grid>
 </UserControl>
