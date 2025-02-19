@@ -31,7 +31,7 @@
 
         <Image
             Canvas.Left="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=1.21}"
-            Canvas.Top="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=4.42}"
+            Canvas.Top="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=4.66}"
             Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=9.6}"
             Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=4.75}"
             IsHitTestVisible="False"

@@ -15,7 +15,7 @@ namespace MagicConch.Converter
         {
             if (value is bool boolValue)
             {
-                return boolValue ? "On" : "Off";
+                return boolValue ? "ON" : "OFF";
             }
 
             Debug.Assert(false);

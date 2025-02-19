@@ -12,7 +12,7 @@
                             x:Name="PART_AlarmClockViewBox"
                             Width="{TemplateBinding Width}"
                             Height="{TemplateBinding Height}"
-                            HorizontalAlignment="Center"
+                            HorizontalAlignment="Left"
                             RenderTransformOrigin="0.5,0.5"
                             Stretch="Fill">
                             <Image Source="/MagicConch;component/Assets/Images/AlarmClock.png" />

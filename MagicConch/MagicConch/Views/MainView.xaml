@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:MagicConch.Views"
     xmlns:support="clr-namespace:MagicConch.Support.Themes.Units;assembly=MagicConch.Support"
-    xmlns:title="clr-namespace:MagicConch.Views.Title">
+    xmlns:title="clr-namespace:MagicConch.Views.Title"
+    xmlns:units="clr-namespace:MagicConch.Themes.Units">
     <UserControl.Resources />
     <Grid>
         <Grid.Background>
@@ -36,11 +37,11 @@
                 <ColumnDefinition Width="0.026*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.066*" />
+                <RowDefinition Height="0.052*" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="0.066*" />
+                <RowDefinition Height="0.052*" />
             </Grid.RowDefinitions>
 
             <Image
@@ -57,21 +58,22 @@
                 Grid.Row="1"
                 Grid.Column="1" />
 
-            <support:SequentialRevealTextBlock
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="0,-19,0,0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Delay="70"
-                FontFamily="{StaticResource BASKVILL}"
-                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=7.68}"
-                IsHitTestVisible="False"
-                StartDelay="300"
-                Text="MAGIC CONCH"
-                TextSpacing="-40"
-                Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
-                Duration="0:0:1.4" />
+            <Canvas Grid.RowSpan="5" Grid.ColumnSpan="5">
+                <support:SequentialRevealTextBlock
+                    Canvas.Top="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=13.41}" 
+                    Canvas.Left="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=43.34}" 
+                    HorizontalAlignment="Center"
+                    Delay="70"
+                    FontFamily="{StaticResource BASKVILL}"
+                    FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=7.68}"
+                    IsHitTestVisible="False"
+                    StartDelay="300"
+                    Text="MAGIC CONCH"
+                    TextSpacing="-40"
+                    Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                    Duration="0:0:1.4" />
+            </Canvas>
+
 
             <Grid
                 Grid.Row="0"
@@ -94,7 +96,15 @@
                     Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
             </Grid>
 
-            <title:BackgroundImages Grid.RowSpan="4" Grid.ColumnSpan="4"/>
+            <title:BackgroundImages Grid.RowSpan="4" Grid.ColumnSpan="4" />
+
+            <Canvas Grid.RowSpan="5" Grid.ColumnSpan="5">
+                <units:AlarmClock
+                    Canvas.Left="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=40.67}"
+                    Canvas.Top="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=1.31}"
+                    Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=25.94}"
+                    Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=5.13}" />
+            </Canvas>
 
             <title:Footer Grid.Row="3" Grid.Column="1" />
 
