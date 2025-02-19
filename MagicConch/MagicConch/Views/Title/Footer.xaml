@@ -12,7 +12,7 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <units:AlarmClock HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <!--<units:AlarmClock HorizontalAlignment="Left" VerticalAlignment="Bottom" />-->
 
         <TextBlock
             HorizontalAlignment="Center"

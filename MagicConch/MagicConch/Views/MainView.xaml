@@ -94,18 +94,7 @@
                     Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
             </Grid>
 
-            <Canvas Grid.RowSpan="5" Grid.ColumnSpan="5">
-                <Image
-                    Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=5.8462}"
-                    Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=2.7143}"
-                    IsHitTestVisible="False"
-                    RenderTransformOrigin="0.5,0.5"
-                    Source="/MagicConch;component/Assets/Images/JellyFish_1.png">
-                    <Image.RenderTransform>
-                        <TranslateTransform X="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=5.78}" Y="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=2.194}" />
-                    </Image.RenderTransform>
-                </Image>
-            </Canvas>
+            <title:BackgroundImages Grid.RowSpan="4" Grid.ColumnSpan="4"/>
 
             <title:Footer Grid.Row="3" Grid.Column="1" />
 
