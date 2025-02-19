@@ -58,22 +58,21 @@
                 Grid.Row="1"
                 Grid.Column="1" />
 
-            <Canvas Grid.RowSpan="5" Grid.ColumnSpan="5">
-                <support:SequentialRevealTextBlock
-                    Canvas.Top="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=13.41}" 
-                    Canvas.Left="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=43.34}" 
-                    HorizontalAlignment="Center"
-                    Delay="70"
-                    FontFamily="{StaticResource BASKVILL}"
-                    FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=7.68}"
-                    IsHitTestVisible="False"
-                    StartDelay="300"
-                    Text="MAGIC CONCH"
-                    TextSpacing="-40"
-                    Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
-                    Duration="0:0:1.4" />
-            </Canvas>
-
+            <support:SequentialRevealTextBlock
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0,-19,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Delay="70"
+                FontFamily="{StaticResource BASKVILL}"
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=7.68}"
+                IsHitTestVisible="False"
+                StartDelay="300"
+                Text="MAGIC CONCH"
+                TextSpacing="-40"
+                Offset="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                Duration="0:0:1.4" />
 
             <Grid
                 Grid.Row="0"
