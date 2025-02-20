@@ -1,10 +1,12 @@
 ﻿using MagicConch.Support.EaseFunctions;
 using MagicConch.Support.Interfaces;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
@@ -102,7 +104,7 @@ namespace MagicConch.Support.Themes.Units
             rect.Rect = new Rect(0, 0, ActualWidth, ActualHeight);
             this.Clip = rect;
 
-            stackPanel.Children.Cast<TextBlock>().ToList().ForEach(child => { child.FontSize = FontSize; });
+            //stackPanel.Children.Cast<TextBlock>().ToList().ForEach(child => { child.FontSize = Application.Current.MainWindow.ActualWidth / 7.69; });
         }
 
         public override void OnApplyTemplate()
@@ -113,12 +115,15 @@ namespace MagicConch.Support.Themes.Units
 
             var splitedText = Text.Select(s => s.ToString()).ToList();
 
+            var converter = Application.Current.Resources["PercentSizeConverter"] as IValueConverter;
+
+            
+
             for (int i = 0; i < splitedText.Count; i++)
             {
                 var textBlock = new TextBlock
                 {
                     Text = splitedText[i],
-                    FontSize = FontSize,
                     Foreground = Foreground,
                     VerticalAlignment = VerticalAlignment,
                     HorizontalAlignment = HorizontalAlignment,
@@ -126,6 +131,19 @@ namespace MagicConch.Support.Themes.Units
                     IsHitTestVisible = false,
                     Opacity = 0,
                 };
+
+                if (converter != null)
+                {
+                    // Width 바인딩
+                    var fontSizeBinding = new Binding("ActualWidth")
+                    {
+                        Source = Application.Current.MainWindow,
+                        Converter = converter,
+                        ConverterParameter = 7.69
+                    };
+                    textBlock.SetBinding(FontSizeProperty, fontSizeBinding);
+                }
+
                 stackPanel.Children.Add(textBlock);
             }
 

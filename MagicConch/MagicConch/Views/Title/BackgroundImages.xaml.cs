@@ -73,7 +73,7 @@ namespace MagicConch.Views.Title
             CompositionTarget.Rendering += UpdateImages;
             canvas.MouseMove += BackgroundImages_MouseMove;
             Loaded += BackgroundImages_Loaded;
-            SizeChanged += BackgroundImages_SizeChanged;
+            canvas.SizeChanged += BackgroundImages_SizeChanged;
         }
 
         private void AddImages(string source, List<Point> positions, Point size)
@@ -93,20 +93,20 @@ namespace MagicConch.Views.Title
             {
                 var left = Application.Current.MainWindow.ActualWidth / item.Value.X;
                 var top = Application.Current.MainWindow.ActualHeight / item.Value.Y;
-                Canvas.SetLeft(item.Key, Application.Current.MainWindow.ActualWidth / item.Value.X);
-                Canvas.SetTop(item.Key, Application.Current.MainWindow.ActualHeight / item.Value.Y);
+                Canvas.SetLeft(item.Key, left);
+                Canvas.SetTop(item.Key, top);
 
-                originalPositions.Add(item.Key, new Point(left, top));
+                originalPositions[item.Key] = new Point(left, top);
             }
-            
         }
 
         private void BackgroundImages_Loaded(object sender, RoutedEventArgs e)
         {
-            AddImages(imageSources[0], Bubble1Position, new Point(9.6,4.75));
+            AddImages(imageSources[0], Bubble1Position, new Point(9.6, 4.75));
             AddImages(imageSources[1], Bubble2Position, new Point(16, 7.91));
             AddImages(imageSources[2], Bubble3Position, new Point(29.53, 14.61));
             AddImages(imageSources[3], Bubble4Position, new Point(80, 39.58));
+
         }
 
         private Image CreateFloatingImage(string source, Point size)
