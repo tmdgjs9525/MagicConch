@@ -18,10 +18,9 @@ namespace MagicConch.Views.Title
     public partial class BackgroundImages : UserControl
     {
         private Point mousePos;
-        private bool isMouseMoving = false;
         private Dictionary<Image, Point> originalPositions = new Dictionary<Image, Point>();
-        private const double AttractionRadius = 150; // 마우스 영향 반경
-        private const double MoveSpeed = 0.05; // 부드러운 이동 속도
+        private const double AttractionRadius = 50; // 마우스 영향 반경
+        private const double MoveSpeed = 0.025; // 부드러운 이동 속도
 
         private readonly List<Image> floatingImages = new();
 
@@ -72,11 +71,9 @@ namespace MagicConch.Views.Title
             this.InitializeComponent();
 
             CompositionTarget.Rendering += UpdateImages;
-            MouseMove += BackgroundImages_MouseMove;
+            canvas.MouseMove += BackgroundImages_MouseMove;
             Loaded += BackgroundImages_Loaded;
             SizeChanged += BackgroundImages_SizeChanged;
-
-            
         }
 
         private void AddImages(string source, List<Point> positions, Point size)
@@ -165,7 +162,6 @@ namespace MagicConch.Views.Title
         private void BackgroundImages_MouseMove(object sender, MouseEventArgs e)
         {
             mousePos = e.GetPosition(canvas);
-            isMouseMoving = true;
         }
 
         private void MoveImage(Image img)
@@ -177,11 +173,13 @@ namespace MagicConch.Views.Title
             double dx = mousePos.X - centerX;
             double dy = mousePos.Y - centerY;
             double distance = Math.Sqrt(dx * dx + dy * dy);
+            double radius = Math.Sqrt((img.Width / 2) * (img.Width / 2) + (img.Height / 2) * (img.Height / 2)) + 20;
 
             Point originalPos = originalPositions[img];
             double targetX, targetY;
-
-            if (distance < AttractionRadius) // 마우스 가까이 있을 때
+            
+            Console.WriteLine(distance);
+            if (distance < radius) // 마우스 가까이 있을 때
             {
                 targetX = imgX + dx * MoveSpeed;
                 targetY = imgY + dy * MoveSpeed;

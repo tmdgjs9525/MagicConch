@@ -6,7 +6,7 @@
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:local="clr-namespace:MagicConch.Views.Title">
 
-    <Canvas x:Name="canvas">
+    <Canvas x:Name="canvas" Background="Transparent">
         <!--  JellyFishes  -->
         <!--<Image
             Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=5.8462}"
