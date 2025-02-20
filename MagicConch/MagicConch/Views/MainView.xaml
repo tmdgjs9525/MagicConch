@@ -66,7 +66,7 @@
                     VerticalAlignment="Top"
                     Delay="70"
                     FontFamily="{StaticResource BASKVILL}"
-                    FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=7.68}"
+                    FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=7.69}"
                     IsHitTestVisible="False"
                     StartDelay="300"
                     Text="MAGIC CONCH"

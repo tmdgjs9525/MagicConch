@@ -10,13 +10,13 @@
                     <ItemsControl
                         x:Name="PART_EQBarItemsControl"
                         Width="{TemplateBinding Width}"
-                        Height="{TemplateBinding Height}"
+                        Height="{TemplateBinding Height}" 
                         Margin="{TemplateBinding Margin}"
                         HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                         VerticalAlignment="{TemplateBinding VerticalAlignment}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" />
+                                <StackPanel Orientation="Horizontal"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     </ItemsControl>
