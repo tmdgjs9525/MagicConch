@@ -8,15 +8,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="units:AlarmClock">
                     <Grid>
-                        <Viewbox
+                        <Image
                             x:Name="PART_AlarmClockViewBox"
-                            Width="{TemplateBinding Width}"
-                            Height="{TemplateBinding Height}"
-                            HorizontalAlignment="Left"
-                            RenderTransformOrigin="0.5,0.5"
-                            Stretch="Fill">
-                            <Image Source="/MagicConch;component/Assets/Images/AlarmClock.png" />
-                        </Viewbox>
+                            HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5"
+                            Source="/MagicConch;component/Assets/Images/AlarmClock.png"
+                            Stretch="Fill" />
 
                         <MediaElement
                             x:Name="PART_MediaElement"

@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Converters\AddDoubleValueConverter.cs" />
-    <Compile Include="Converters\SizeConverter.cs" />
+    <Compile Include="Converters\PercentMarginConverter.cs" />
+    <Compile Include="Converters\PercentSizeConverter.cs" />
     <Compile Include="Converters\NegativeValueConverter.cs" />
     <Compile Include="EaseFunctions\CustomExponentialEase.cs" />
     <Compile Include="EaseFunctions\ElasticEase.cs" />

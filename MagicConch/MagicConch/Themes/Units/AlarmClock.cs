@@ -13,7 +13,7 @@ namespace MagicConch.Themes.Units
 {
     public partial class AlarmClock : Button
     {
-        private Viewbox PART_AlarmClockViewBox = null!;
+        private Image PART_AlarmClockViewBox = null!;
         private Storyboard shirnkStoryboard = new Storyboard();
         private Storyboard expandStoryboard = new Storyboard();
         private MediaElement PART_MediaElement = null!;
@@ -41,7 +41,7 @@ namespace MagicConch.Themes.Units
 
             SizeChanged += AlarmClock_SizeChanged;
 
-            PART_AlarmClockViewBox = (Viewbox)GetTemplateChild("PART_AlarmClockViewBox");
+            PART_AlarmClockViewBox = (Image)GetTemplateChild("PART_AlarmClockViewBox");
             PART_MediaElement = (MediaElement)GetTemplateChild("PART_MediaElement");
 
             //PART_MediaElement.Volume = 1;
@@ -64,30 +64,33 @@ namespace MagicConch.Themes.Units
 
         private void setShirnkAnimation()
         {
-            DoubleAnimation heightDoubleAnimation = new DoubleAnimation()
+            ScaleTransform scaleTransform = new ScaleTransform();
+            PART_AlarmClockViewBox.RenderTransform = scaleTransform;
+
+            DoubleAnimation scaleXAnimation = new DoubleAnimation()
             {
                 Duration = Duration,
                 EasingFunction = new SineEase() { EasingMode = EasingMode.EaseOut },
-                From = ActualHeight,
-                To = ActualHeight / 2,
+                From = 1,
+                To = 1.5
             };
 
-            DoubleAnimation widthDoubleAnimation = new DoubleAnimation()
+            DoubleAnimation scaleYAnimation = new DoubleAnimation()
             {
                 Duration = Duration,
                 EasingFunction = new SineEase() { EasingMode = EasingMode.EaseOut },
-                From = ActualWidth,
-                To = ActualWidth * 1.5,
+                From = 1,
+                To = 0.5
             };
 
-            Storyboard.SetTarget(heightDoubleAnimation, PART_AlarmClockViewBox);
-            Storyboard.SetTargetProperty(heightDoubleAnimation, new PropertyPath(Viewbox.HeightProperty));
+            Storyboard.SetTarget(scaleXAnimation, PART_AlarmClockViewBox);
+            Storyboard.SetTargetProperty(scaleXAnimation, new PropertyPath("RenderTransform.ScaleX"));
 
-            Storyboard.SetTarget(widthDoubleAnimation, PART_AlarmClockViewBox);
-            Storyboard.SetTargetProperty(widthDoubleAnimation, new PropertyPath(Viewbox.WidthProperty));
+            Storyboard.SetTarget(scaleYAnimation, PART_AlarmClockViewBox);
+            Storyboard.SetTargetProperty(scaleYAnimation, new PropertyPath("RenderTransform.ScaleY"));
 
-            shirnkStoryboard.Children.Add(heightDoubleAnimation);
-            shirnkStoryboard.Children.Add(widthDoubleAnimation);
+            shirnkStoryboard.Children.Add(scaleXAnimation);
+            shirnkStoryboard.Children.Add(scaleYAnimation);
 
             shirnkStoryboard.Completed += (s, e) =>
             {
@@ -98,30 +101,30 @@ namespace MagicConch.Themes.Units
 
         private void setExpandAnimation()
         {
-            DoubleAnimation heightDoubleAnimation = new DoubleAnimation()
+            DoubleAnimation scaleXAnimation = new DoubleAnimation()
             {
                 Duration = Duration,
                 EasingFunction = new ElasticEase() { EasingMode = EasingMode.EaseOut },
-                From = ActualHeight / 2,
-                To = ActualHeight,
+                From = 1.5,
+                To = 1
             };
 
-            DoubleAnimation widthDoubleAnimation = new DoubleAnimation()
+            DoubleAnimation scaleYAnimation = new DoubleAnimation()
             {
                 Duration = Duration,
                 EasingFunction = new ElasticEase() { EasingMode = EasingMode.EaseOut },
-                From = ActualWidth * 1.5,
-                To = ActualWidth,
+                From = 0.5,
+                To = 1
             };
 
-            Storyboard.SetTarget(heightDoubleAnimation, PART_AlarmClockViewBox);
-            Storyboard.SetTargetProperty(heightDoubleAnimation, new PropertyPath(Viewbox.HeightProperty));
+            Storyboard.SetTarget(scaleXAnimation, PART_AlarmClockViewBox);
+            Storyboard.SetTargetProperty(scaleXAnimation, new PropertyPath("RenderTransform.ScaleX"));
 
-            Storyboard.SetTarget(widthDoubleAnimation, PART_AlarmClockViewBox);
-            Storyboard.SetTargetProperty(widthDoubleAnimation, new PropertyPath(Viewbox.WidthProperty));
+            Storyboard.SetTarget(scaleYAnimation, PART_AlarmClockViewBox);
+            Storyboard.SetTargetProperty(scaleYAnimation, new PropertyPath("RenderTransform.ScaleY"));
 
-            expandStoryboard.Children.Add(heightDoubleAnimation);
-            expandStoryboard.Children.Add(widthDoubleAnimation);
+            expandStoryboard.Children.Add(scaleXAnimation);
+            expandStoryboard.Children.Add(scaleYAnimation);
         }
     }
 }

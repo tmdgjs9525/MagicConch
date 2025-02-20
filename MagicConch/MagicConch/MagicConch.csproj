@@ -68,6 +68,7 @@
     <Compile Include="Behavior\BlinkBehavior.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Behavior\FloattingAnimationBehavior.cs" />
     <Compile Include="Behavior\MouseWheelBehavior.cs" />
     <Compile Include="Behavior\ScaleFontBehavior.cs" />
     <Compile Include="Converter\BoolToOnOffConverter.cs" />

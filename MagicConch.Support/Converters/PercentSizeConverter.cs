@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
-using System.Windows.Markup;
 
 namespace MagicConch.Support.Converters
 {
-    public class AddDoubleValueConverter : IValueConverter
+    public class PercentSizeConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is double width && parameter is string param)
+            double param = double.Parse(parameter.ToString()!);
+
+            if (value is double width && width > 0)
             {
-                if (double.TryParse(param, out double addValue))
-                {
-                    return width + addValue;
-                }
+                return width / param; 
             }
-            return value;
+            return 16; // 기본값 
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            // ConvertBack은 구현하지 않음
             throw new NotImplementedException();
         }
     }

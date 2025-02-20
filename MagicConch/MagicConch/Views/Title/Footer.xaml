@@ -8,13 +8,13 @@
         <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="{StaticResource GothamBook}" />
             <Setter Property="IsHitTestVisible" Value="False" />
-            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
+            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}" />
         </Style>
     </UserControl.Resources>
     <Grid>
         <!--<units:AlarmClock
-            Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=25.94}"
-            Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=5.13}"
+            Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=25.94}"
+            Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=5.13}"
             HorizontalAlignment="Left" ClipToBounds="False"
             VerticalAlignment="Bottom" />-->
 

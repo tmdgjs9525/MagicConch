@@ -14,8 +14,8 @@
                 <ResourceDictionary Source="/MagicConch.Support;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <supportCnvtrs:AddDoubleValueConverter x:Key="AddDoubleValueConverter" />
-            <supportCnvtrs:SizeConverter x:Key="SizeConverter" />
+            <supportCnvtrs:PercentMarginConverter x:Key="PercentMarginConverter"/>
+            <supportCnvtrs:PercentSizeConverter x:Key="PercentSizeConverter" />
 
             <Style TargetType="TextBlock">
                 <Setter Property="IsHitTestVisible" Value="False" />

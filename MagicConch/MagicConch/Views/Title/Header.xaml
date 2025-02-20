@@ -14,7 +14,7 @@
         <Style x:Key="HeaderTextStyle" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="{StaticResource GothamBook}" />
             <Setter Property="IsHitTestVisible" Value="False" />
-            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
+            <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}" />
         </Style>
 
     </UserControl.Resources>
@@ -30,7 +30,7 @@
             <TextBlock
                 Margin="7,-2,0,0"
                 VerticalAlignment="Center"
-                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=160}"
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=160}"
                 IsHitTestVisible="False"
                 Text="●">
                 <i:Interaction.Behaviors>
@@ -51,7 +51,7 @@
                 CharacterSpacing="-40"
                 Content="Coded"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}" />
 
             <support:UnderLineButton
                 Margin="20,0,0,0"
@@ -59,7 +59,7 @@
                 CharacterSpacing="-40"
                 Content="Design"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}" />
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
@@ -82,7 +82,7 @@
                         <Setter Property="IsChecked" Value="{Binding IsMusicPlaying, Mode=TwoWay}" />
                         <Setter Property="Content" Value="{Binding IsMusicPlaying, StringFormat='Sound : {0:ON;OFF}', Converter={StaticResource BoolToOnOffConverter}}" />
                         <Setter Property="FontFamily" Value="{StaticResource GothamBook}" />
-                        <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource SizeConverter}, ConverterParameter=90}" />
+                        <Setter Property="FontSize" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}" />
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="ToggleButton">
