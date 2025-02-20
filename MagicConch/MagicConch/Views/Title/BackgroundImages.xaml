@@ -6,7 +6,7 @@
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:local="clr-namespace:MagicConch.Views.Title">
 
-    <Canvas>
+    <Canvas x:Name="canvas">
         <!--  JellyFishes  -->
         <!--<Image
             Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=5.8462}"
@@ -15,7 +15,7 @@
             Source="/MagicConch;component/Assets/Images/JellyFish_1.png" />-->
 
         <!--  Bubbles  -->
-        <Image
+        <!--<Image
             Canvas.Left="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=51.75}"
             Canvas.Top="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=2.58}"
             Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=9.6}"
@@ -193,6 +193,6 @@
             <i:Interaction.Behaviors>
                 <behavior:FloattingAnimationBehavior />
             </i:Interaction.Behaviors>
-        </Image>
+        </Image>-->
     </Canvas>
 </UserControl>
