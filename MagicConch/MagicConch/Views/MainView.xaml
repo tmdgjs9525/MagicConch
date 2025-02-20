@@ -75,23 +75,18 @@
                     Duration="0:0:1.4" />
             </Canvas>
 
-            <Grid
-                Grid.Row="0"
-                Grid.RowSpan="5"
-                Grid.ColumnSpan="5"
+            <Grid Grid.Row="2" Grid.Column="1"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
                 IsHitTestVisible="False">
                 <Image
                     Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=3.31}"
                     Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=1.64}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
+
                     IsHitTestVisible="False"
                     Source="/MagicConch;component/Assets/Images/Conch_Body.png" />
                 <Image
                     Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=3.31}"
                     Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=1.64}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
                     IsHitTestVisible="False"
                     Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
             </Grid>
