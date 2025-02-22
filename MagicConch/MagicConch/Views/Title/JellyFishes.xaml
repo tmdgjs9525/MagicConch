@@ -1,0 +1,10 @@
+﻿<UserControl
+    x:Class="MagicConch.Views.Title.JellyFishes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MagicConch.Views.Title">
+
+    <Grid>
+        <Canvas x:Name="canvas" Background="Transparent" />
+    </Grid>
+</UserControl>

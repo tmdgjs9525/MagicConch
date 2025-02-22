@@ -10,9 +10,9 @@ namespace MagicConch.Support.Converters
         {
             double param = double.Parse(parameter.ToString()!);
 
-            if (value is double width && width > 0)
+            if (value is double length && length > 0)
             {
-                return width / param; 
+                return length / param; 
             }
             return 16; // 기본값 
         }

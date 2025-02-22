@@ -44,6 +44,9 @@
                 <RowDefinition Height="0.052*" />
             </Grid.RowDefinitions>
 
+            <title:JellyFishes Grid.RowSpan="4" Grid.ColumnSpan="4"/>
+            <title:Bubbles Grid.RowSpan="4" Grid.ColumnSpan="4" />
+
             <Image
                 Grid.RowSpan="5"
                 Grid.ColumnSpan="5"
@@ -92,8 +95,6 @@
                     IsHitTestVisible="False"
                     Source="/MagicConch;component/Assets/Images/Conch_Handle.png" />
             </Grid>
-
-            <title:BackgroundImages Grid.RowSpan="4" Grid.ColumnSpan="4" />
 
             <Canvas Grid.RowSpan="5" Grid.ColumnSpan="5">
                 <units:AlarmClock

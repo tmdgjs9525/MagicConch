@@ -52,13 +52,16 @@
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Title\BackgroundImages.xaml">
+    <Page Include="Views\Title\Bubbles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Title\Footer.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Title\Header.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Title\JellyFishes.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -97,9 +100,10 @@
     <Compile Include="Views\Conch\ConchView.xaml.cs" />
     <Compile Include="Views\MainPage.xaml.cs" />
     <Compile Include="Views\MainView.xaml.cs" />
-    <Compile Include="Views\Title\BackgroundImages.xaml.cs" />
+    <Compile Include="Views\Title\Bubbles.xaml.cs" />
     <Compile Include="Views\Title\Footer.xaml.cs" />
     <Compile Include="Views\Title\Header.xaml.cs" />
+    <Compile Include="Views\Title\JellyFishes.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -116,6 +120,27 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Images\Bubble_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\JellyFish_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\JellyFish_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\JellyFish_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\JellyFish_5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\JellyFish_6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\JellyFish_7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\JellyFish_8.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Content Include="Assets\Sounds\spongebob-boat-horn.mp3">
