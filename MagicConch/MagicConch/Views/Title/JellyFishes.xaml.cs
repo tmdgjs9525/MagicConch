@@ -30,12 +30,12 @@ namespace MagicConch.Views.Title
     {
         private List<ImageInfo> imageInfos = new List<ImageInfo>
         {
-            new ImageInfo
-            {
-                Source = "/MagicConch;component/Assets/Images/JellyFish_1.png" ,
-                size = new Size(325,350),
-                point = new Point(169,257.9),
-            },
+            //new ImageInfo
+            //{
+            //    Source = "/MagicConch;component/Assets/Images/JellyFish_1.png" ,
+            //    size = new Size(325,350),
+            //    point = new Point(169,257.9),
+            //},
             new ImageInfo
             {
                 Source = "/MagicConch;component/Assets/Images/JellyFish_2.png" ,
@@ -60,24 +60,24 @@ namespace MagicConch.Views.Title
                 size = new Size(140,140),
                 point = new Point(1287.1,36.6),
             },
-            new ImageInfo
-            {
-                Source = "/MagicConch;component/Assets/Images/JellyFish_6.png" ,
-                size = new Size(480,480),
-                point = new Point(212.5,434.7),
-            },
-            new ImageInfo
-            {
-                Source = "/MagicConch;component/Assets/Images/JellyFish_7.png" ,
-                size = new Size(460,460),
-                point = new Point(1320,187.9),
-            },
-            new ImageInfo
-            {
-                Source = "/MagicConch;component/Assets/Images/JellyFish_8.png" ,
-                size = new Size(400,150),
-                point = new Point(502.3,0),
-            },
+            //new ImageInfo
+            //{
+            //    Source = "/MagicConch;component/Assets/Images/JellyFish_6.png" ,
+            //    size = new Size(480,480),
+            //    point = new Point(212.5,434.7),
+            //},
+            //new ImageInfo
+            //{
+            //    Source = "/MagicConch;component/Assets/Images/JellyFish_7.png" ,
+            //    size = new Size(460,460),
+            //    point = new Point(1320,187.9),
+            //},
+            //new ImageInfo
+            //{
+            //    Source = "/MagicConch;component/Assets/Images/JellyFish_8.png" ,
+            //    size = new Size(400,150),
+            //    point = new Point(502.3,0),
+            //},
         };
 
         private Dictionary<Image, Point> originalPositions = new();

@@ -10,6 +10,11 @@ namespace MagicConch.Support.Converters
         {
             double param = double.Parse(parameter.ToString()!);
 
+            if (param == 0)
+            {
+                return 0;
+            }
+
             if (value is double length && length > 0)
             {
                 return length / param; 
