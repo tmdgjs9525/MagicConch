@@ -74,8 +74,12 @@
                 Source="/MagicConch;component/Assets/Images/Conch_Glow.png"
                 Stretch="Uniform" />
 
-            <Canvas Grid.RowSpan="5" Grid.ColumnSpan="5">
+            <Canvas
+                x:Name="middelLayerCanvas"
+                Grid.RowSpan="5"
+                Grid.ColumnSpan="5">
                 <support:SequentialRevealTextBlock
+                    x:Name="sequentialRevealTextBlock"
                     Canvas.Left="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=45.4}"
                     Canvas.Top="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=17.2}"
                     HorizontalAlignment="Center"

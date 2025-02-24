@@ -1,5 +1,6 @@
 ﻿using MagicConch.Helper;
 using MagicConch.Support.Interfaces;
+using MagicConch.Support.Themes.Units;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,10 +29,9 @@ namespace MagicConch.Views
             VisualHelper.FindAllAnimationTextBlock(this.Content, animationControls);
 
             Loaded += MainView_Loaded;
-        }
+            Unloaded += MainView_Unloaded;
+            IsVisibleChanged += MainView_IsVisibleChanged;
 
-        private void MainView_Loaded(object sender, RoutedEventArgs e)
-        {
             Dispatcher.BeginInvoke((Action)(() =>
             {
                 foreach (IAnimation control in animationControls)
@@ -39,6 +39,22 @@ namespace MagicConch.Views
                     control.StartAnimation();
                 }
             }));
+        }
+
+        private void MainView_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void MainView_Unloaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MainView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+           
         }
     }
 }

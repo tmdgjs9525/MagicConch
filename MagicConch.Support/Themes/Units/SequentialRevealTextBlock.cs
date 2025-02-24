@@ -38,9 +38,6 @@ namespace MagicConch.Support.Themes.Units
         // Using a DependencyProperty as the backing store for Duration.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DurationProperty =
             DependencyProperty.Register("Duration", typeof(TimeSpan), typeof(SequentialRevealTextBlock), new PropertyMetadata(new TimeSpan(0,0,1)));
-
-
-
         public int Delay
         {
             get { return (int)GetValue(DelayProperty); }
@@ -50,9 +47,6 @@ namespace MagicConch.Support.Themes.Units
         // Using a DependencyProperty as the backing store for Delay.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DelayProperty =
             DependencyProperty.Register("Delay", typeof(int), typeof(SequentialRevealTextBlock), new PropertyMetadata(40));
-
-
-
         public int StartDelay
         {
             get { return (int)GetValue(StartDelayProperty); }
@@ -117,8 +111,6 @@ namespace MagicConch.Support.Themes.Units
 
             var converter = Application.Current.Resources["PercentSizeConverter"] as IValueConverter;
 
-            
-
             for (int i = 0; i < splitedText.Count; i++)
             {
                 var textBlock = new TextBlock
@@ -149,6 +141,17 @@ namespace MagicConch.Support.Themes.Units
 
         }
 
+        public void Initalize()
+        {
+            foreach ( var item in stackPanel.Children )
+            {
+                if(item is TextBlock textblock)
+                {
+                    textblock.Opacity = 0;
+                }
+            }
+        }
+
         public async Task StartAnimation()
         {
             await Task.Delay(StartDelay);
@@ -164,7 +167,6 @@ namespace MagicConch.Support.Themes.Units
 
             if (string.IsNullOrWhiteSpace(textblock.Text) is false)
             {
-                textblock.Opacity = 1;
                 animateText(textblock);
             }
 
@@ -197,6 +199,7 @@ namespace MagicConch.Support.Themes.Units
             storyboard.Children.Add(transformAnimation);
 
             storyboard.Begin();
+            element.Opacity = 1;
         }
     }
 }

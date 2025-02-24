@@ -75,7 +75,7 @@ namespace MagicConch
 
             Container container = new Container(services);
 
-            container.AddTransientNavigation<MainView, MainViewModel>();
+            container.AddSingletonNavigation<MainView, MainViewModel>();
             container.AddSingletonNavigation<ConchView, ConchViewModel>();
 
             if (kernel is not null)

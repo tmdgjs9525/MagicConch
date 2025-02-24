@@ -85,7 +85,14 @@ namespace MagicConch.Views.Title
         public JellyFishes()
         {
             this.InitializeComponent();
-            Loaded += JellyFishes_Loaded;
+
+            foreach (var item in imageInfos)
+            {
+                Image img = CreateFloatingImage(item.Source, item.size, item.point);
+                item.Image = img;
+                canvas.Children.Add(img);
+            }
+
             SizeChanged += JellyFishes_SizeChanged;
         }
 
@@ -109,17 +116,6 @@ namespace MagicConch.Views.Title
                 //point.Y = top;
             }
         }
-
-        private void JellyFishes_Loaded(object sender, RoutedEventArgs e)
-        {
-            foreach (var item in imageInfos)
-            {
-                Image img = CreateFloatingImage(item.Source, item.size, item.point);
-                item.Image = img;
-                canvas.Children.Add(img);
-            }
-        }
-
 
         private Image CreateFloatingImage(string source, Size size, Point point)
         {
