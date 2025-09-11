@@ -40,9 +40,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Views\ToolTipUnderLineButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Themes\Views\FloattingBubble.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,7 +94,6 @@
     <Compile Include="Themes\Units\FloattingBubble.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Themes\Units\ToolTipUnderLineButton.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\ConchViewModel.cs" />

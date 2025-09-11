@@ -46,22 +46,20 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-            <units:ToolTipUnderLineButton
+            <support:UnderLineButton
                 Background="Transparent"
                 CharacterSpacing="-40"
                 Content="Coded"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}"
-                ToolTipText="Test" />
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}" />
 
-            <units:ToolTipUnderLineButton
+            <support:UnderLineButton
                 Margin="20,0,0,0"
                 Background="Transparent"
                 CharacterSpacing="-40"
                 Content="Design"
                 FontFamily="{StaticResource GothamBook}"
-                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}"
-                ToolTipText="Test" />
+                FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=90}" />
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
