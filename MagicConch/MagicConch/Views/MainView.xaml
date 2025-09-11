@@ -84,7 +84,6 @@
                     Canvas.Top="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=17.2}"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
-                    Background="Gray"
                     Delay="70"
                     FontFamily="{StaticResource BASKVILL}"
                     FontSize="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource PercentSizeConverter}, ConverterParameter=7.69}"
