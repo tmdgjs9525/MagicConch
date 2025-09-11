@@ -80,8 +80,6 @@ namespace MagicConch.Support.Themes.Units
         public static readonly DependencyProperty TextSpacingProperty =
             DependencyProperty.Register("TextSpacing", typeof(double), typeof(SequentialRevealTextBlock), new PropertyMetadata(0.0));
 
-
-
         static SequentialRevealTextBlock()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SequentialRevealTextBlock), new FrameworkPropertyMetadata(typeof(SequentialRevealTextBlock)));
@@ -122,7 +120,10 @@ namespace MagicConch.Support.Themes.Units
                     FontWeight = FontWeight,
                     IsHitTestVisible = false,
                     Opacity = 0,
+                    LineStackingStrategy = LineStackingStrategy.BlockLineHeight,
                 };
+
+                textBlock.SizeChanged += TextBlock_SizeChanged;
 
                 if (converter != null)
                 {
@@ -139,6 +140,13 @@ namespace MagicConch.Support.Themes.Units
                 stackPanel.Children.Add(textBlock);
             }
 
+        }
+
+        private void TextBlock_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var tb = sender as TextBlock;
+
+            tb.LineHeight = tb.FontSize * 1.8;
         }
 
         public void Initalize()
