@@ -1,8 +1,7 @@
 # MagicConch
 ## 📷 미리보기
-https://opensilverflix.netlify.app/
-
 https://shmagicconch.netlify.app/
+
 ## MagicConch
 메인 프로젝트로 View와 Viewmodel이 위치
 
